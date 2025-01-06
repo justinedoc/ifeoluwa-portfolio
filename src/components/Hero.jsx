@@ -41,12 +41,12 @@ function Hero() {
       <article className="max-w-[85%]">
         <span>Currently a Product Design & Team Lead at</span>
         <div className="relative w-fit">
-          Sportrex. So,
-          <button className="text-lg bg-white rounded-full py-2 px-7 text-black font-medium translate-x-5 translate-y-1">
+          <span>Sportrex. So,</span>
+          <button className="text-lg bg-white rounded-full py-2 px-7 text-black font-medium translate-x-5 translate-y-1 peer">
             Let&#39;s Talk About Your Project
           </button>
           <img
-            className="absolute w-10 -top-3 -right-14"
+            className="absolute w-10 -top-3 -right-14 opacity-0 peer-hover:opacity-100 transition-opacity duration-300 ease-in-out"
             src={pointerImg}
             alt="cursor"
           />

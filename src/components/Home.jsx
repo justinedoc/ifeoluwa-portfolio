@@ -23,7 +23,7 @@ function Home() {
 function HomeFront() {
   return (
     <>
-      <section className="bg-[#131212] rounded-3xl __section-inner">
+      <section className="bg-[#131212] rounded-3xl p-10 __section-inner">
         <Dots placements={dotsPlacement} />
         <Navbar />
         <Hero />
