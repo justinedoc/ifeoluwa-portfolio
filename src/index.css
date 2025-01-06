@@ -5,4 +5,13 @@
 
 :root {
   font-family: "Space Grotesk", sans-serif;
+  scroll-snap-type: mandatory;
+}
+
+.__section {
+  @apply snap-start min-h-screen flex justify-center;
+}
+
+.__section-inner {
+  @apply p-10 relative max-w-[78rem] 2xl:max-w-[90rem];
 }

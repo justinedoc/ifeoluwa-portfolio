@@ -4,6 +4,7 @@ import webdevImg from "../assets/web-devImg.png";
 import pointerImg from "../assets/pointer-img.png";
 import { minorSkills } from "../data/dataForMinorSkills";
 import TeamsCarousel from "../ui/TeamsCarousel";
+import { Suspense } from "react";
 function Hero() {
   return (
     <section className="text-white font-medium text-[2.3rem] mb-6 mt-16 px-[7rem] min-h-60 relative">
@@ -52,10 +53,16 @@ function Hero() {
         </div>
       </article>
 
-      <div className="flex gap-3 my-9">
-        <p className="text-[1.6rem] font-medium">Worked with teams from: </p>
-        <TeamsCarousel />
-      </div>
+      <article className="flex items-center my-7 overflow-hidden">
+        <p className="text-lg font-medium z-10 w-fit min-w-[15rem]">
+          Worked with teams from:{" "}
+        </p>
+        <div className="overflow-hidden flex items-center cursor-pointer">
+          <Suspense fallback={"Loading..."}>
+            <TeamsCarousel />
+          </Suspense>
+        </div>
+      </article>
     </section>
   );
 }
