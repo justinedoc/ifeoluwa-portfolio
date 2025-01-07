@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import toolsImg from "../assets/tools.png";
 import useMeasure from "react-use-measure";
 import { motion, useMotionValue } from "motion/react";

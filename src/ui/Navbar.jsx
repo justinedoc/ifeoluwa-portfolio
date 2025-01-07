@@ -6,7 +6,7 @@ function Navbar({ isInverted = false }) {
 
   return (
     <nav
-      className={`sticky top-0 z-50 flex justify-between items-center p-1 w-[80%] md:w-[50%] mx-auto rounded-full ${invertedBg}`}
+      className={`sticky top-[2rem] z-50 flex justify-between items-center p-1 w-[80%] md:w-[50%] mx-auto rounded-full ${invertedBg}`}
     >
       <div
         className={`w-11 h-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}

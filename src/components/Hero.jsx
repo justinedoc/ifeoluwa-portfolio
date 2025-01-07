@@ -7,7 +7,7 @@ import TeamsCarousel from "../ui/TeamsCarousel";
 import { Suspense } from "react";
 function Hero() {
   return (
-    <section className="text-white font-medium text-[2.3rem] mb-6 mt-16 px-[7rem] min-h-60 relative">
+    <section className="text-white font-medium text-[2.3rem] mb-6 mt-16 md:px-8 min-h-60 relative">
       <article className="flex items-center gap-2">
         <span>I am</span>
         <ProfileTag text={"Onifade Ifeoluwa"} rotate={"-10deg"} />
@@ -19,7 +19,7 @@ function Hero() {
         <span>and</span>
         <img className="w-64" src={webdevImg} alt="low-code web devloper" />
 
-        <aside className="absolute top-40 right-10 -rotate-90">
+        <aside className="absolute top-40 right-36 -rotate-90">
           <div className="relative">
             {minorSkills.map((skill) => (
               <div

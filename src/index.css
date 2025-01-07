@@ -9,9 +9,10 @@
 }
 
 .__section {
-  @apply snap-start min-h-screen flex justify-center;
+  @apply  min-h-screen flex justify-center;
 }
 
+/* snap-start */
 .__section-inner {
   @apply relative max-w-[78rem] 2xl:max-w-[90rem];
 }
