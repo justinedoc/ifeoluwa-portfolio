@@ -6,13 +6,14 @@ import Tools from "../ui/Tools";
 import Works from "./Works";
 import About from "./About";
 import Footer from "./Footer";
+import useScreenSize from "../hooks/useScreenSize";
 
 function Home() {
   return (
     <>
       <main className="scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth">
         {/* Home */}
-        <section id="home" className="bg-[#F3FFFE] p-6 __section flex-col">
+        <section id="home" className="bg-[#F3FFFE] p-3 md:p-6 __section flex-col">
           <HomeFront />
         </section>
         {/*  Works */}
@@ -22,20 +23,23 @@ function Home() {
         <section id="aboutme" className="bg-[#131212] __section p-6">
           <About />
         </section>
-        <Footer />
+        <section className="bg-[#F3FFFE] md:p-10 p-5">
+          <Footer />
+        </section>
       </main>
     </>
   );
 }
 
 function HomeFront() {
+  const { isSmallScreened } = useScreenSize();
   return (
     <>
-      <section className="bg-[#131212] rounded-3xl p-10 __section-inner">
+      <main className="bg-[#131212] rounded-3xl p-5 md:p-10 __section-inner">
         <Dots placements={dotsPlacement} />
-        <Navbar />
+        {!isSmallScreened ? <Navbar /> : null}
         <Hero />
-      </section>
+      </main>
       <Tools />
     </>
   );

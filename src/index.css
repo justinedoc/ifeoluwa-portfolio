@@ -9,10 +9,9 @@
 }
 
 .__section {
-  @apply  min-h-screen flex justify-center;
+  @apply min-h-screen flex justify-center;
 }
 
-/* snap-start */
 .__section-inner {
-  @apply relative max-w-[78rem] 2xl:max-w-[90rem];
+  @apply relative snap-start max-w-[78rem] 2xl:max-w-[90rem];
 }
