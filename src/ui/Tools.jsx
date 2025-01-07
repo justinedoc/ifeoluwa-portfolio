@@ -36,7 +36,7 @@ function Tools() {
   }, [xTranslation, width]);
 
   return (
-    <section className="flex gap-3">
+    <section className="flex items-center gap-3">
       <h1 className="text-[2.3rem] font-bold">Tools:</h1>
       <div className="overflow-hidden">
         <motion.div
@@ -49,6 +49,7 @@ function Tools() {
               key={index}
               src={src}
               alt={alt}
+              loading="lazy"
               className="object-contain h-auto w-auto max-h-16"
             />
           ))}

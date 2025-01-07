@@ -77,7 +77,7 @@ function Image({ productImg, isEven }) {
     <div
       className={` ${isEven ? "bg-[#C5DEFE]" : "bg-black"} rounded-xl w-full h-[15rem] md:h-[20rem] my-3`}
     >
-      <img src={productImg || "#"} alt="" />
+      <img src={productImg || "#"} alt="" loading="lazy" />
     </div>
   );
 }

@@ -61,6 +61,7 @@ function About() {
             className="md:w-44 w-72"
             src={proofOfWorkImg}
             alt="proof of work"
+            loading="lazy"
           />
         </aside>
       </main>
@@ -155,6 +156,7 @@ function Experience() {
                     src={data.isActive ? activeStatus : notActiveStatus}
                     alt="active status"
                     className="w-2 h-2 object-contain"
+                    loading="lazy"
                   />
                   <span className="text-xs font-extralight">
                     {data.isActive ? "Active" : "Past"}
@@ -174,6 +176,7 @@ function Experience() {
             className="w-72 md:w-64 ml-auto md:ml-0"
             src={experience}
             alt="my experience"
+            loading="lazy"
           />
         </aside>
       </div>

@@ -97,6 +97,7 @@ function Card({ src, alt }) {
       src={src}
       alt={alt}
       className="object-contain h-auto w-auto max-h-[3rem] max-w-32"
+      loading="lazy"
     />
   );
 }

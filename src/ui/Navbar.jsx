@@ -11,7 +11,7 @@ function Navbar({ isInverted = false }) {
       <div
         className={`w-11 h-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}
       >
-        <img className="w-[88%]" src={profileNav} alt="profile" />
+        <img className="w-[88%]" src={profileNav} alt="profile" loading="lazy" />
       </div>
 
       <ul

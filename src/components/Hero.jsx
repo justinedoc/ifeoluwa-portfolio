@@ -24,12 +24,14 @@ function Hero() {
           className="w-48 md:w-64"
           src={prodesignerImg}
           alt="product designer"
+          loading="lazy"
         />
         <span>and</span>
         <img
           className="w-48 md:w-64"
           src={webdevImg}
           alt="low-code web devloper"
+          loading="lazy"
         />
 
         {!isSmallScreened && (
@@ -68,6 +70,7 @@ function Hero() {
             className="absolute w-10 -top-3 -right-8 md:-right-14 opacity-0 peer-hover:opacity-100 transition-opacity duration-300 ease-in-out"
             src={pointerImg}
             alt="cursor"
+            loading="lazy"
           />
         </div>
       </article>

@@ -4,20 +4,22 @@ import crLike from "../assets/likes-2.png";
 function Footer() {
   return (
     <footer className="relative z-10 overflow-hidden bg-[#131212] min-h-[14rem] border px-5 md:px-10 md:py-5 pt-10 pb-24 rounded-xl snap-end">
-
-
       <div className="absolute w-full z-10 bottom-0 left-0 flex justify-center items-center">
         <h1 className="md:text-[12rem] text-[3.6rem] tracking-wide text-[#FFFFFF1A] font-bold">
           {" "}
           DesignNinja
         </h1>
       </div>
-
       <main className="grid grid-cols-1 gap-20 md:gap-0 md:grid-cols-3 place-items-center mb-10">
         {/* Image  */}
         <div className="md:w-56 md:h-56 w-60 h-60 rounded-full bg-white flex justify-center items-center z-20">
           <div className="w-56 h-56 rounded-full  overflow-hidden">
-            <img className="w-full" src={profilePhoto} alt="profile" />
+            <img
+              className="w-full"
+              src={profilePhoto}
+              alt="profile"
+              loading="lazy"
+            />
           </div>
         </div>
 
