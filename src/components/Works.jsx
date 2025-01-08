@@ -13,7 +13,7 @@ function Works() {
       {!isSmallScreened && <Navbar isInverted />}
 
       {/* Header and Navigation */}
-      <div className="text-black my-2 md:my-5 flex flex-col md:flex-row md:justify-between md:items-baseline">
+      <div className="text-black md:my-5 flex flex-col md:flex-row md:justify-between md:items-baseline">
         <h1 className="font-bold tracking-tight text-[3.5rem] text-center">
           My Works
         </h1>
@@ -25,7 +25,7 @@ function Works() {
                 key={sec}
                 onClick={() => setActiveNav(sec)}
                 role="button"
-                className={`px-[0.3rem] py-2 md:px-3 md:py-[0.3rem] text-black text-xs font-bold md:text-sm cursor-pointer transition-all duration-300 ease border-2 border-transparent
+                className={`px-[0.3rem] py-2 md:px-3 md:py-[0.3rem] text-black text-[0.6rem] font-bold md:text-sm cursor-pointer transition-all duration-300 ease md:border-2 border border-transparent
                   ${
                     activeNav === sec
                       ? "bg-black text-white rounded-md -translate-y-3 border-white"

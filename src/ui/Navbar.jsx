@@ -11,11 +11,17 @@ function Navbar({ isInverted = false }) {
       <div
         className={`w-11 h-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}
       >
-        <img className="w-[88%]" src={profileNav} alt="profile" loading="lazy" />
+        <img
+          className="w-[88%]"
+          src={profileNav}
+          alt="profile"
+          loading="lazy"
+        />
       </div>
 
       <ul
-        className={`flex gap-7 text-md font-semibold  ${isInverted && "text-white"}`}
+        className={`flex gap-7 text-md font-semibold
+           ${isInverted && "text-white"}`}
       >
         <li>
           <a href="#home">Home</a>
@@ -24,7 +30,7 @@ function Navbar({ isInverted = false }) {
           <a href="#works">Works</a>
         </li>
         <li>
-          <a href="#">About Me</a>
+          <a href="#aboutme">About Me</a>
         </li>
       </ul>
 

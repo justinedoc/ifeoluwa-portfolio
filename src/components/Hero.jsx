@@ -76,7 +76,7 @@ function Hero() {
       </article>
 
       {isSmallScreened && (
-        <aside className="-rotate-90 min-h-52 flex items-center -translate-x-2 -translate-y-12">
+        <aside className="-rotate-90 min-h-52 flex items-center -translate-x-2 -translate-y-8">
           <div className="relative">
             {minorSkills.map((skill) => (
               <div

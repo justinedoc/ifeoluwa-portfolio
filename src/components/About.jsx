@@ -73,7 +73,7 @@ function About() {
         <header className="text-2xl md:text-3xl text-[#4F4F4F] font-bold">Email me:</header>
         <a
           href="mailto:ifeoluwa.designs@gmail.com"
-          className="text-white hover:text-[#C9C9C9] text-2xl md:text-lg font-medium"
+          className="text-white hover:text-[#C9C9C9] text-xl md:text-lg font-medium"
         >
           ifeoluwa.designs@gmail.com
         </a>

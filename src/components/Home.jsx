@@ -13,7 +13,10 @@ function Home() {
     <>
       <main className="scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth">
         {/* Home */}
-        <section id="home" className="bg-[#F3FFFE] p-3 md:p-6 __section flex-col">
+        <section
+          id="home"
+          className="bg-[#F3FFFE] p-3 md:p-6 __section flex-col"
+        >
           <HomeFront />
         </section>
         {/*  Works */}
@@ -23,8 +26,12 @@ function Home() {
         <section id="aboutme" className="bg-[#131212] __section p-6">
           <About />
         </section>
-        <section className="bg-[#F3FFFE] md:p-10 p-5">
+        <section className="bg-[#F3FFFE] md:p-10 p-3">
           <Footer />
+          <p className="text-lg font-semibold text-center mt-3 text-[#6F6F70]">
+            {" "}
+            Copyright 2025, Onifade Ifeoluwa.{" "}
+          </p>
         </section>
       </main>
     </>
