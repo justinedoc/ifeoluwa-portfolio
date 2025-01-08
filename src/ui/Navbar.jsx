@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
 import profileNav from "../assets/navbar-profile.png";
+import useNavLinks from "../hooks/useNavLinks";
 
-function Navbar({ isInverted = false }) {
+function Navbar({ isInverted = false, activeNav }) {
   const invertedBg = isInverted ? "bg-black" : "bg-white";
+  const navLinks = useNavLinks({ activeLinkName: activeNav, isInverted });
 
   return (
     <nav
-      className={`sticky top-[2rem] z-50 flex justify-between items-center p-1 w-[80%] md:w-[50%] mx-auto rounded-full ${invertedBg}`}
+      className={`sticky top-[2rem] z-50 flex justify-between items-center p-1 w-[80%] md:w-[55%] mx-auto rounded-full ${invertedBg}`}
     >
       <div
         className={`w-11 h-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}
@@ -19,19 +21,12 @@ function Navbar({ isInverted = false }) {
         />
       </div>
 
+      {/* Navigation  */}
       <ul
         className={`flex gap-7 text-md font-semibold
-           ${isInverted && "text-white"}`}
+        ${isInverted && "text-white"}`}
       >
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#works">Works</a>
-        </li>
-        <li>
-          <a href="#aboutme">About Me</a>
-        </li>
+        {[...navLinks]}
       </ul>
 
       <button

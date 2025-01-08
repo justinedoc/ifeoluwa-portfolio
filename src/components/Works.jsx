@@ -10,7 +10,7 @@ function Works() {
   const { isSmallScreened } = useScreenSize();
   return (
     <section className="md:px-10 __section-inner w-full">
-      {!isSmallScreened && <Navbar isInverted />}
+      {!isSmallScreened && <Navbar isInverted activeNav={"Works"} />}
 
       {/* Header and Navigation */}
       <div className="text-black md:my-5 flex flex-col md:flex-row md:justify-between md:items-baseline">

@@ -10,7 +10,7 @@ function About() {
   const { isSmallScreened } = useScreenSize();
   return (
     <section className="__section-inner md:px-10 w-full">
-      {!isSmallScreened && <Navbar />}
+      {!isSmallScreened && <Navbar activeNav={"About Me"} />}
 
       <header className="mt-10">
         <h1 className="text-white text-[3.5rem] leading-tight md:text-[3rem] font-bold">

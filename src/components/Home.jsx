@@ -44,7 +44,7 @@ function HomeFront() {
     <>
       <main className="bg-[#131212] rounded-3xl p-5 md:p-10 __section-inner">
         <Dots placements={dotsPlacement} />
-        {!isSmallScreened ? <Navbar /> : null}
+        {!isSmallScreened ? <Navbar activeNav="Home" /> : null}
         <Hero />
       </main>
       <Tools />
