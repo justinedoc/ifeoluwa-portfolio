@@ -7,8 +7,37 @@ import Works from "./Works";
 import About from "./About";
 import Footer from "./Footer";
 import useScreenSize from "../hooks/useScreenSize";
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 function Home() {
+  useEffect(() => {
+    const sr = ScrollReveal({
+      distance: "15px",
+      duration: 1300,
+      delay: 200,
+      reset: true,
+    });
+
+    sr.reveal(".__anim-left", {
+      origin: "left",
+    });
+
+    sr.reveal(".__anim-right", {
+      origin: "right",
+    });
+
+    sr.reveal(".__anim-top", {
+      origin: "top",
+    });
+
+    sr.reveal(".__anim-bottom", {
+      origin: "bottom",
+    });
+
+    return () => sr.destroy();
+  }, []);
+
   return (
     <>
       <main className="scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth">
@@ -40,6 +69,7 @@ function Home() {
 
 function HomeFront() {
   const { isSmallScreened } = useScreenSize();
+
   return (
     <>
       <main className="bg-[#131212] rounded-3xl p-5 md:p-10 __section-inner">

@@ -30,7 +30,7 @@ function Navbar({ isInverted = false, activeNav }) {
       </ul>
 
       <button
-        className={`${isInverted ? "bg-white text-black" : "text-white bg-black"}  font-medium py-3 px-8 rounded-full`}
+        className={`${isInverted ? "bg-white text-black" : "text-white bg-black"}  font-medium py-3 px-8 rounded-full opacity-100 hover:bg-gray-950 hover:opacity-90 transition-all`}
       >
         Let&#39;s Talk
       </button>

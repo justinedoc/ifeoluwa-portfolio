@@ -11,7 +11,7 @@ function Hero() {
   return (
     <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] mb-6 mt-16 md:px-8 min-h-80 relative">
       <article className="flex flex-col md:flex-row md:items-center gap-2">
-        <span className="text-nowrap">I am</span>
+        <span className="text-nowrap __anim-left">I am</span>
         <div className="w-fit flex flex-wrap gap-2 justify-between -translate-x-2 md:-translate-x-0">
           <ProfileTag text={"Onifade Ifeoluwa"} rotate={"-10deg"} />
           <ProfileTag text={"Design Ninja"} rotate={"18deg"} />
@@ -45,7 +45,7 @@ function Hero() {
                     transformOrigin: "left center",
                     transform: `rotate(${skill?.angle})`,
                   }}
-                  className={`text-[1rem] ${skill.backgroundColor} w-fit min-w-48 p-1 rounded-full text-black font-bold absolute flex gap-[0.8rem] text-nowrap items-center`}
+                  className={`text-[1rem] ${skill.backgroundColor} w-fit min-w-48 p-1 rounded-full text-black font-bold absolute flex gap-[0.8rem] text-nowrap items-center cursor-pointer opacity-100 hover:opacity-85 transition duration-200 ease`}
                 >
                   <div className={"bg-black h-10 w-10 rounded-full"}></div>
                   <span>{skill.name}</span>
@@ -86,7 +86,7 @@ function Hero() {
                   transformOrigin: "left center",
                   transform: `rotate(${skill?.angle})`,
                 }}
-                className={`text-[1rem] ${skill.backgroundColor} w-fit min-w-48 p-1 rounded-full text-black font-bold absolute flex gap-[0.8rem] text-nowrap items-center`}
+                className={`text-[1rem] ${skill.backgroundColor} w-fit min-w-48 p-1 rounded-full text-black font-bold absolute flex gap-[0.8rem] text-nowrap items-center cursor-pointer`}
               >
                 <div className={"bg-black h-10 w-10 rounded-full"}></div>
                 <span>{skill.name}</span>
