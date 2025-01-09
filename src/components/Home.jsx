@@ -6,8 +6,7 @@ import Tools from "../ui/Tools";
 import Works from "./Works";
 import About from "./About";
 import Footer from "./Footer";
-import useScreenSize from "../hooks/useScreenSize";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { animations } from "../animations/animateHome";
 import ScrollReveal from "scrollreveal";
 
@@ -16,7 +15,7 @@ function Home() {
     const sr = ScrollReveal?.({
       origin: "top",
       distance: "15px",
-      duration: 1000,
+      duration: 900,
       delay: 100,
       reset: true,
     });
@@ -28,8 +27,8 @@ function Home() {
 
   return (
     <>
-      {/* scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth */}
-      <main className="">
+      {/* scroll-container snap-y snap-mandatory overflow-y-scroll h-screen  */}
+      <main className="scroll-smooth">
         {/* Home */}
         <section
           id="home"
@@ -57,13 +56,20 @@ function Home() {
 }
 
 function HomeFront() {
-  const { isSmallScreened } = useScreenSize();
-
+  const [showNav, setShowNav] = useState(false);
   return (
     <>
       <main className="bg-[#131212] rounded-3xl p-5 md:p-10 __section-inner">
-        <Dots placements={dotsPlacement} />
-        {!isSmallScreened ? <Navbar activeNav="Home" /> : null}
+        <Dots
+          placements={dotsPlacement}
+          setShowNav={setShowNav}
+          showNav={showNav}
+        />
+        <Navbar
+          activeNav="Home"
+          showNavbar={showNav}
+          setShowNavbar={setShowNav}
+        />
         <Hero />
       </main>
       <Tools />

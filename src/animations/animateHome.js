@@ -1,9 +1,4 @@
 export const animations = (sr) => {
-  console.log("ScrollReveal initialized:", sr);
-
-  const rightElements = document.querySelectorAll(".__anim-right");
-  console.log("Right elements found:", rightElements);
-
   sr.reveal(".__anim-right", { origin: "right" });
   sr.reveal(".__anim-left", { origin: "left" });
   sr.reveal(".__anim-top", { origin: "top" });

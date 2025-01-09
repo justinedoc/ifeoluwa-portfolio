@@ -81,10 +81,11 @@ function ProductCard({ product, index }) {
   );
 }
 
-function Image({ productImg, project }) {
+function Image({ productImg, project, isEven }) {
+  const Animationdelay = !isEven ? " __delay-450" : " __delay-600";
   return (
     <div
-      className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-bottom __delay-600 bg-[#131212] rounded-2xl px-5 pt-5 pb-2`}
+      className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-bottom ${Animationdelay} bg-[#131212] rounded-2xl px-5 pt-5 pb-2`}
     >
       <div className="">
         <img
