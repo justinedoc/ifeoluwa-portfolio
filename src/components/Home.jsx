@@ -15,14 +15,14 @@ function Home() {
     const sr = ScrollReveal?.({
       origin: "top",
       distance: "15px",
-      duration: 900,
+      duration: 1000,
       delay: 100,
-      reset: true,
+      reset: false,
     });
 
     animations(sr);
 
-    return () => sr.destroy();
+    // return () => sr.destroy();
   }, []);
 
   return (

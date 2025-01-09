@@ -3,7 +3,7 @@ function useNavLinks({ activeLinkName, isInverted }) {
     { name: "Home", link: "#home" },
     { name: "Works", link: "#works" },
     { name: "About", link: "#about" },
-    { name: "Resume", link: "#resume" },
+    { name: "Resume", link: "https://onifadeifeoluwacv.netlify.app" },
   ];
 
   return links.map((link) => (

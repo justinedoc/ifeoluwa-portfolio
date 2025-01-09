@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../ui/Navbar";
 import { dataForProducts } from "../data/dataForProducts";
 import useScreenSize from "../hooks/useScreenSize";
+import { IoArrowUpOutline } from "react-icons/io5";
+import { MdOutlineSearchOff } from "react-icons/md";
 
 const navItems = [
   ["All", "Product Design", "Low - Codes"],
@@ -12,6 +14,20 @@ const navItems = [
 function Works() {
   const [activeNav, setActiveNav] = useState(navItems[0][0]);
   const { isSmallScreened } = useScreenSize();
+  const [products, setProducts] = useState(dataForProducts);
+
+  useEffect(() => {
+    const filteredProducts =
+      activeNav === "All"
+        ? dataForProducts
+        : dataForProducts.filter((product) =>
+            product?.type
+              .toLocaleLowerCase()
+              .includes(activeNav.toLocaleLowerCase())
+          );
+
+    setProducts((prod) => [...new Set([...filteredProducts, ...prod])]);
+  }, [activeNav]);
 
   return (
     <section className="md:px-10 __section-inner w-full">
@@ -45,6 +61,7 @@ function Works() {
                 </li>
               ))}
           </ul>
+
           {isSmallScreened &&
             navItems.map((nav) => (
               <ul
@@ -73,12 +90,27 @@ function Works() {
       </div>
 
       {/* FIXME: h-[30rem] overflow-auto */}
-      <section className="my-5 md:my-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14 ">
-        {dataForProducts.map((product, i) => (
-          <ProductCard key={i} product={product} index={1 + i} />
-        ))}
+      <section className="my-5 md:my-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14">
+        {products.length <= 0 ? (
+          <NotFound />
+        ) : (
+          products.map((product, i) => (
+            <ProductCard key={i} product={product} index={1 + i} />
+          ))
+        )}
       </section>
     </section>
+  );
+}
+
+function NotFound() {
+  return (
+    <div className="flex items-center justify-center flex-col text-center text-black text-xl col-span-2 mt-3">
+      <MdOutlineSearchOff size={96} />
+      <span className="font-medium">
+        No Projects found for this filter. Please check back later.
+      </span>
+    </div>
   );
 }
 
@@ -128,17 +160,27 @@ function Image({ productImg, project, isEven }) {
       </div>
 
       <div className="flex flex-wrap justify-center gap-x-5 space-y-1 items-center py-3 text-[#4F4F4F] font-medium text-sm md:text-base">
-        <span>
-          Project Year:{" "}
-          <span className="text-white font-semibold">{project.year}</span>{" "}
-        </span>
-        <span>
-          Technology:{" "}
-          <span className="text-white font-semibold">{project.tech}</span>{" "}
-        </span>
-        <span>
-          Role: <span className="text-white font-semibold">{project.role}</span>{" "}
-        </span>
+        {!project?.expandable ? (
+          <>
+            <span>
+              Project Year:{" "}
+              <span className="text-white font-semibold">{project?.year}</span>{" "}
+            </span>
+            <span>
+              Technology:{" "}
+              <span className="text-white font-semibold">{project?.tech}</span>{" "}
+            </span>
+            <span>
+              Role:{" "}
+              <span className="text-white font-semibold">{project?.role}</span>{" "}
+            </span>
+          </>
+        ) : (
+          <div className="w-full flex gap-1 justify-end items-center cursor-pointer">
+            <span className="text-base font-semibold">View Image</span>
+            <IoArrowUpOutline size={24} className="rotate-45 text-white" />
+          </div>
+        )}
       </div>
     </div>
   );

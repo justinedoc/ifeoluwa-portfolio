@@ -8,6 +8,7 @@ import useScreenSize from "../hooks/useScreenSize";
 
 function About() {
   const { isSmallScreened } = useScreenSize();
+
   return (
     <section className="__section-inner md:px-10 w-full">
       {!isSmallScreened && <Navbar activeNav={"About"} />}
@@ -25,8 +26,7 @@ function About() {
             .split("-")
             .map((wrd, i) => (
               <span key={i} className={"__anim-right __delay-" + (i + 1) * 800}>
-                {wrd}
-                {"-"}
+                {wrd}{" "}
               </span>
             ))}
         </p>

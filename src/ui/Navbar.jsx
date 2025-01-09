@@ -38,7 +38,7 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
     {
       name: "Resume",
       icon: <IoIosPaper size={24} />,
-      link: "#resume",
+      link: "https://onifadeifeoluwacv.netlify.app",
     },
   ];
 

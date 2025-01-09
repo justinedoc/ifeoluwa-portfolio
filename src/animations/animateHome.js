@@ -1,8 +1,17 @@
 export const animations = (sr) => {
-  sr.reveal(".__anim-right", { origin: "right" });
-  sr.reveal(".__anim-left", { origin: "left" });
-  sr.reveal(".__anim-top", { origin: "top" });
-  sr.reveal(".__anim-bottom", { origin: "bottom" });
+  sr.reveal(".__anim-right", {
+    origin: "right",
+    container: ".__scroll-container",
+  });
+  sr.reveal(".__anim-left", {
+    origin: "left",
+    container: ".__scroll-container",
+  });
+  sr.reveal(".__anim-top", { origin: "top", container: ".__scroll-container" });
+  sr.reveal(".__anim-bottom", {
+    origin: "bottom",
+    container: ".__scroll-container",
+  });
 
   sr.reveal(".__fade-in", {
     opacity: 0,

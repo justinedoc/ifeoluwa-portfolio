@@ -11,7 +11,7 @@ function Dots({ placements, setShowNav, showNav }) {
         <div
           onClick={() => setShowNav((cur) => !cur)}
           key={i}
-          className="size-11 rounded-full flex justify-center items-center fixed z-[100] transition-all"
+          className="size-11 rounded-full flex justify-center items-center fixed z-[100] transition-all shadow-md"
           style={{
             top: " 1.7rem",
             right: "1.9rem",
