@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import profileNav from "../assets/navbar-profile.png";
-function ProfileTag({ text, rotate }) {
+function ProfileTag({ text, rotate, className }) {
   return (
     <div
       style={{ rotate }}
-      className="bg-white text-black text-lg flex justify-between items-center w-fit pr-3 p-1 md:pr-5 md:py-[0.3rem] rounded-full gap-2"
+      className={`bg-white text-black text-lg flex justify-between items-center w-fit pr-3 p-1 md:pr-5 md:py-[0.3rem] rounded-full gap-2 ${className}`}
     >
       <div className="w-8 h-8 rounded-full bg-[#131111] flex items-center justify-center">
         <img

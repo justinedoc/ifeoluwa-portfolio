@@ -8,39 +8,30 @@ import About from "./About";
 import Footer from "./Footer";
 import useScreenSize from "../hooks/useScreenSize";
 import { useEffect } from "react";
+import { animations } from "../animations/animateHome";
 import ScrollReveal from "scrollreveal";
 
 function Home() {
   useEffect(() => {
-    const sr = ScrollReveal({
-      distance: "15px",
-      duration: 1300,
-      delay: 200,
-      reset: true,
-    });
-
-    sr.reveal(".__anim-left", {
-      origin: "left",
-    });
-
-    sr.reveal(".__anim-right", {
-      origin: "right",
-    });
-
-    sr.reveal(".__anim-top", {
+    const sr = ScrollReveal?.({
       origin: "top",
+      opacity: 0,
+      distance: "7px",
+      duration: 700,
+      delay: 0,
+      reset: true,
+      viewFactor: 0.3,
     });
 
-    sr.reveal(".__anim-bottom", {
-      origin: "bottom",
-    });
+    setTimeout(() => animations(sr), 100);
 
     return () => sr.destroy();
   }, []);
 
   return (
     <>
-      <main className="scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth">
+      {/* scroll-container snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth */}
+      <main className="">
         {/* Home */}
         <section
           id="home"
@@ -52,7 +43,7 @@ function Home() {
         <section id="works" className="bg-white __section p-6">
           <Works />
         </section>
-        <section id="aboutme" className="bg-[#131212] __section p-6">
+        <section id="about" className="bg-[#131212] __section p-6">
           <About />
         </section>
         <section className="bg-[#F3FFFE] md:p-10 p-3">

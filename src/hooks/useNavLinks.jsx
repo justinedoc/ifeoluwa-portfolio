@@ -2,7 +2,7 @@ function useNavLinks({ activeLinkName, isInverted }) {
   const links = [
     { name: "Home", link: "#home" },
     { name: "Works", link: "#works" },
-    { name: "About", link: "#aboutme" },
+    { name: "About", link: "#about" },
     { name: "Resume", link: "#resume" },
   ];
 

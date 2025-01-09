@@ -14,15 +14,26 @@ function About() {
 
       <header className="mt-10">
         <h1 className="text-white text-[3.5rem] leading-tight md:text-[3rem] font-bold">
-          Onifade Ifeoluwa Emmanuel
+          {"Onifade Ifeoluwa Emmanuel".split(" ").map((wrd, i) => (
+            <span key={i} className={"__anim-left __delay-" + (i + 1) * 350}>
+              {wrd}{" "}
+            </span>
+          ))}
         </h1>
         <p className="text-[#C9C9C9] text-3xl mt-5 md:mt-0 md:text-2xl font-bold">
-          Product Design Lead - Sportrex, Flex2ride and etc.
+          {"Product Design Lead - Sportrex, Flex2ride and etc."
+            .split("-")
+            .map((wrd, i) => (
+              <span key={i} className={"__anim-right __delay-" + (i + 1) * 800}>
+                {wrd}
+                {"-"}
+              </span>
+            ))}
         </p>
       </header>
 
       <aside className="flex flex-col md:flex-row md:justify-between gap-4 my-9 w-full">
-        <p className="text-xl font-medium text-[#C9C9C9] max-w-[15rem]">
+        <p className="text-xl font-medium text-[#C9C9C9] max-w-[15rem] __anim-left __delay-800">
           Get Familiar with the face behind the works
         </p>
 
@@ -30,18 +41,18 @@ function About() {
         {Array.from({ length: 3 }, (_, i) => (
           <div
             key={i}
-            className="bg-[#C5DEFE] h-[14rem] md:h-[10rem] md:max-w-[18rem] rounded-lg w-full"
+            className={`bg-[#C5DEFE] h-[14rem] md:h-[10rem] md:max-w-[18rem] rounded-lg w-full __anime-top __delay-${(i + 1) * 300}`}
           ></div>
         ))}
       </aside>
 
       <main className="flex flex-col md:flex-row md:gap-36 md:justify-end">
-        <p className="md:text-lg text-2xl font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10">
+        <p className="md:text-lg text-2xl font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10 __fade-in">
           I’m a <span className="text-[#4F4F4F]">product designer</span> with{" "}
           <span className="text-[#4F4F4F]">4+ years of experience</span>,
           focusing on{" "}
           <span className="text-[#4F4F4F]">Web3, mobile, and web apps,</span>{" "}
-          especially interested in
+          especially interested in{" "}
           <span className="text-[#4F4F4F]">
             building for Telegram mini apps
           </span>
@@ -54,11 +65,11 @@ function About() {
         </p>
 
         <aside className="mt-10 md:mt-0 flex flex-col items-end">
-          <p className="md:text-sm text-2xl font-medium text-[#C9C9C9] mb-7 md:mb-3">
+          <p className="md:text-sm text-2xl font-medium text-[#C9C9C9] mb-7 md:mb-3 __anim-right __delay-700">
             Hope You Know A Bit <br /> About Me Now ?????
           </p>
           <img
-            className="md:w-44 w-72"
+            className="md:w-44 w-72 __anim-right __delay-900"
             src={proofOfWorkImg}
             alt="proof of work"
             loading="lazy"
@@ -70,10 +81,12 @@ function About() {
       <Experience />
 
       <aside className="flex flex-col md:flex-row gap-3 w-full md:items-center justify-center">
-        <header className="text-2xl md:text-3xl text-[#4F4F4F] font-bold">Email me:</header>
+        <header className="text-2xl md:text-3xl text-[#4F4F4F] font-bold __anim-left __delay-500">
+          Email me:
+        </header>
         <a
           href="mailto:ifeoluwa.designs@gmail.com"
-          className="text-white hover:text-[#C9C9C9] text-xl md:text-lg font-medium"
+          className="text-white __anim-right __delay-700 hover:text-[#C9C9C9] text-xl md:text-lg font-medium"
         >
           ifeoluwa.designs@gmail.com
         </a>
@@ -98,7 +111,7 @@ function AreaOfFocus() {
   ];
   return (
     <section className="flex gap-5 w-full my-7 flex-col">
-      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit">
+      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left delay-300">
         My Area Of Focus
       </h1>
 
@@ -106,30 +119,30 @@ function AreaOfFocus() {
       <div className="flex flex-col items-center gap-5 w-full">
         {/* Areas  */}
         <div className="flex justify-center flex-wrap gap-5 md:gap-10 w-full">
-          {areas.slice(0, 4).map((area) => (
+          {areas.slice(0, 4).map((area, i) => (
             <h2
               key={area}
-              className="md:text-2xl text-xl font-medium text-white"
+              className={`md:text-2xl text-xl font-medium text-white __anim-bottom __delay-${(i + 1) * 200}`}
             >
               {area}
             </h2>
           ))}
         </div>
         <div className="flex justify-center flex-wrap gap-5 md:gap-10 w-full">
-          {areas.slice(4, 8).map((area) => (
+          {areas.slice(4, 8).map((area, i) => (
             <h2
               key={area}
-              className="md:text-2xl text-xl font-medium text-white"
+              className={`md:text-2xl text-xl font-medium text-white __anim-bottom __delay-${(i + 1) * 400}`}
             >
               {area}
             </h2>
           ))}
         </div>
         <div className="flex justify-center flex-wrap gap-5 md:gap-10 w-full">
-          {areas.slice(8, 11).map((area) => (
+          {areas.slice(8, 11).map((area, i) => (
             <h2
               key={area}
-              className="md:text-2xl text-xl font-medium text-white"
+              className={`md:text-2xl text-xl font-medium text-white __anim-bottom __delay-${(i + 1) * 600}`}
             >
               {area}
             </h2>
@@ -143,15 +156,17 @@ function AreaOfFocus() {
 function Experience() {
   return (
     <section className="md:my-7 my-10">
-      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit">
+      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left __delay-300">
         My Past and Current Work Experience...
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-0 md:justify-items-center mt-7">
         <main className="min-w-[15rem] md:min-w-[25rem] md:max-w-[25rem] flex gap-3 flex-col text-white">
-          {dataForExperience.map((data) => (
+          {dataForExperience.map((data, i) => (
             <div key={data.company} className="flex items-end justify-between">
               <div className="min-w-fit">
-                <div className="flex items-center gap-1">
+                <div
+                  className={`flex items-center gap-1 __anim-top __delay-${(i + 1) * 350}`}
+                >
                   <img
                     src={data.isActive ? activeStatus : notActiveStatus}
                     alt="active status"
@@ -162,9 +177,16 @@ function Experience() {
                     {data.isActive ? "Active" : "Past"}
                   </span>
                 </div>
-                <p className="text-lg font-medium">{data.company}</p>
+                <p
+                  className={`text-lg font-medium __anim-left __delay-${(i + 1) * 450}`}
+                >
+                  {data.company}
+                </p>
               </div>
-              <h2 className="text-sm text-[#707070] text-right text-pretty max-w-[12rem] font-semibold">
+
+              <h2
+                className={`text-sm text-[#707070] text-right text-pretty max-w-[12rem] font-semibold __anim-right __delay-${(i + 1) * 450}`}
+              >
                 {data.date}
               </h2>
             </div>
