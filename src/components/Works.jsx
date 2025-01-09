@@ -4,9 +4,13 @@ import Navbar from "../ui/Navbar";
 import { dataForProducts } from "../data/dataForProducts";
 import useScreenSize from "../hooks/useScreenSize";
 
-const navItems = ["Product Design", "Low - Codes", "Branding", "Illustrations"];
+const navItems = [
+  ["All", "Product Design", "Low - Codes"],
+  ["Branding", "Illustrations", "Motion Design"],
+];
+
 function Works() {
-  const [activeNav, setActiveNav] = useState(navItems[0]);
+  const [activeNav, setActiveNav] = useState(navItems[0][0]);
   const { isSmallScreened } = useScreenSize();
 
   return (
@@ -20,24 +24,51 @@ function Works() {
         </h1>
 
         <nav>
-          <ul className="flex justify-between md:gap-3 items-center bg-[#C5DEFE] rounded-lg px-2 py-1 my-3 md:my-0">
-            {navItems.map((sec) => (
-              <li
-                key={sec}
-                onClick={() => setActiveNav(sec)}
-                role="button"
-                className={`px-[0.3rem] py-2 md:px-3 md:py-[0.3rem] text-black text-[0.6rem] font-bold md:text-sm cursor-pointer transition-all duration-300 ease md:border-2 border border-transparent
+          <ul
+            className={`${isSmallScreened ? "hidden" : ""} flex justify-between md:gap-1 items-center bg-[#C5DEFE] rounded-lg px-2 py-1 my-3 md:my-0`}
+          >
+            {!isSmallScreened &&
+              navItems.flat().map((sec) => (
+                <li
+                  key={sec}
+                  onClick={() => setActiveNav(sec)}
+                  role="button"
+                  className={`px-[0.3rem] min-w-20 text-center py-2 md:px-3 md:py-[0.3rem] text-black text-[0.6rem] font-bold md:text-sm cursor-pointer transition-all duration-300 ease md:border-2 border border-transparent
                 }
                   ${
                     activeNav === sec
                       ? "bg-black text-white rounded-md -translate-y-3 border-white"
                       : "bg-transparent hover:bg-gray-50 hover:rounded-sm"
                   }`}
-              >
-                {sec}
-              </li>
-            ))}
+                >
+                  {sec}
+                </li>
+              ))}
           </ul>
+          {isSmallScreened &&
+            navItems.map((nav) => (
+              <ul
+                key={nav}
+                className="flex justify-between items-center bg-[#C5DEFE] rounded-lg px-2 py-1 my-3"
+              >
+                {nav.map((sec) => (
+                  <li
+                    onClick={() => setActiveNav(sec)}
+                    role="button"
+                    key={sec}
+                    className={`min-w-20 text-center px-[0.3rem] py-1 text-black text-[0.71rem] font-bold cursor-pointer transition-all duration-300 ease md:border-2 border border-transparent
+                        }
+                          ${
+                            activeNav === sec
+                              ? "bg-black text-white rounded-md -translate-y-3 border-white"
+                              : "bg-transparent hover:bg-gray-50 hover:rounded-sm"
+                          }`}
+                  >
+                    {sec}
+                  </li>
+                ))}
+              </ul>
+            ))}
         </nav>
       </div>
 
