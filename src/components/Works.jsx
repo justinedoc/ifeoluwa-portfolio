@@ -68,7 +68,7 @@ function ProductCard({ product, index }) {
 
         <a
           href={product.link}
-          className="font-light text-sm text-[#2F80ED] __anim-top __delay-600"
+          className="font-light text-sm min-w-fit text-[#2F80ED] __anim-top __delay-600"
         >
           View Project
         </a>

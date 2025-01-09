@@ -15,15 +15,13 @@ function Home() {
   useEffect(() => {
     const sr = ScrollReveal?.({
       origin: "top",
-      opacity: 0,
-      distance: "7px",
-      duration: 700,
-      delay: 0,
+      distance: "15px",
+      duration: 1000,
+      delay: 100,
       reset: true,
-      viewFactor: 0.3,
     });
 
-    setTimeout(() => animations(sr), 100);
+    animations(sr);
 
     return () => sr.destroy();
   }, []);
