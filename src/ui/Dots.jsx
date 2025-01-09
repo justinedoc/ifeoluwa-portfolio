@@ -1,9 +1,12 @@
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
+import useScreenSize from "../hooks/useScreenSize";
 
 function Dots({ placements, setShowNav, showNav }) {
+  const { isSmallScreened } = useScreenSize();
+  
   return Array.from({ length: 4 }, (_, i) => {
-    if (i === 1) {
+    if (i === 1 && isSmallScreened) {
       return (
         <div
           onClick={() => setShowNav((cur) => !cur)}
