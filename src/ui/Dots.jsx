@@ -4,7 +4,7 @@ import useScreenSize from "../hooks/useScreenSize";
 
 function Dots({ placements, setShowNav, showNav }) {
   const { isSmallScreened } = useScreenSize();
-  
+
   return Array.from({ length: 4 }, (_, i) => {
     if (i === 1 && isSmallScreened) {
       return (

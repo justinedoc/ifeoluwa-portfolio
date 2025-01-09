@@ -16,12 +16,12 @@ function Hero() {
           <ProfileTag
             text={"Onifade Ifeoluwa"}
             rotate={"-10deg"}
-            className="__anim-top __delay-2000"
+            className="__anim-top __delay-1000"
           />
           <ProfileTag
             text={"Design Ninja"}
             rotate={"18deg"}
-            className={"__anim-top __delay-2500"}
+            className={"__anim-top __delay-1500"}
           />
         </div>
       </article>
