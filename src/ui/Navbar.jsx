@@ -128,6 +128,9 @@ function LargerScreenNav({ isInverted, activeNav }) {
       </ul>
 
       <button
+        onClick={() => {
+          window.location.href = "mailto:ifeoluwa.designs@gmail.com";
+        }}
         className={`${isInverted ? "bg-white text-black hover:bg-gray-200" : "text-white bg-black hover:bg-gray-950 "}  font-medium py-3 px-8 rounded-full opacity-100 hover:opacity-90 transition-all`}
       >
         Let&#39;s Talk

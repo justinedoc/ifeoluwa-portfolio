@@ -5,19 +5,19 @@ function Footer() {
   const socials = [
     {
       name: "LINKEDIN",
-      link: "#",
+      link: "https://www.linkedin.com/in/onifadeifeoluwa",
     },
     {
       name: "X/TWITTER",
-      link: "#",
+      link: "https://www.twitter.com/ifeloveth1",
     },
     {
       name: "DRIBBLE",
-      link: "#",
+      link: "https://www.dribbble.com/onifadeifeoluwa",
     },
     {
       name: "BEHANCE",
-      link: "#",
+      link: "https://www.behance.net/ifeloveth1",
     },
   ];
   return (
@@ -41,7 +41,7 @@ function Footer() {
           </div>
         </div>
 
-        <nav className="max-w-[20rem]">
+        <nav className="max-w-[20rem] z-20">
           <ul className="grid grid-cols-2 gap-10 md:gap-5 text-white font-bold text-center text-2xl">
             {socials.map((social, i) => (
               <li

@@ -64,7 +64,12 @@ function Hero() {
           {!isSmallScreened && (
             <span className="__anim-top __delay-1000">Sportrex. So,</span>
           )}
-          <button className="text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 peer __anim-right __delay-2000">
+          <button
+            onClick={() => {
+              window.location.href = "mailto:ifeoluwa.designs@gmail.com";
+            }}
+            className="text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 peer __anim-right __delay-2000"
+          >
             Let&#39;s Talk About Your Project
           </button>
           <img
