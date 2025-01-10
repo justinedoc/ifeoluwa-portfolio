@@ -5,9 +5,29 @@ import notActiveStatus from "../assets/not-active-status.png";
 import experience from "../assets/experience.png";
 import { dataForExperience } from "../data/dataForExperience";
 import useScreenSize from "../hooks/useScreenSize";
+import me1 from "../assets/me-1.png";
+import me2 from "../assets/me-2.png";
+import me3 from "../assets/me-3.png";
 
 function About() {
   const { isSmallScreened } = useScreenSize();
+
+  const me = [
+    {
+      desc: "Traditional Attire",
+      src: me1,
+    },
+
+    {
+      desc: "A portrait picture of me",
+      src: me2,
+    },
+
+    {
+      desc: "Workspace",
+      src: me3,
+    },
+  ];
 
   return (
     <section className="__section-inner md:px-10 w-full">
@@ -38,11 +58,22 @@ function About() {
         </p>
 
         {/* TODO: replace with images  */}
-        {Array.from({ length: 3 }, (_, i) => (
+        {me.map((item, i) => (
           <div
             key={i}
-            className={`bg-[#C5DEFE] h-[14rem] md:h-[10rem] md:max-w-[18rem] rounded-lg w-full __anime-top __delay-${(i + 1) * 300}`}
-          ></div>
+            className={`h-[14rem] md:h-[15rem] md:max-w-[18rem] rounded-lg w-full __anime-top __delay-${(i + 1) * 300} overflow-hidden relative group`}
+          >
+            <img
+              className="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease"
+              src={item.src}
+              alt={item.desc}
+              loading="lazy"
+            />
+
+            <div className="absolute top-0 left-0 h-full w-full flex items-end p-5 text-[#C9C9C9] font-medium text-lg bg-gradient-to-t from-black/60 via-black/30 to-transparent cursor-pointer">
+              <span className="">{item.desc}</span>
+            </div>
+          </div>
         ))}
       </aside>
 
@@ -69,6 +100,9 @@ function About() {
             Hope You Know A Bit <br /> About Me Now ?????
           </p>
           <img
+            onClick={() => {
+              window.location.href = "https://mainstack.me/designninja";
+            }}
             className="md:w-44 w-72 __anim-right __delay-900"
             src={proofOfWorkImg}
             alt="proof of work"
