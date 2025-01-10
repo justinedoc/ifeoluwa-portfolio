@@ -14,7 +14,7 @@ function useNavLinks({ activeLinkName, isInverted }) {
       } transition duration-300 ease-in-out group`}
     >
       <a
-        className={`${link.name === activeLinkName ? "font-extralight" : "before:w-0"} group-hover:text-gray-600 before:transition-all`}
+        className={`${link.name === activeLinkName ? "font-extralight" : "before:w-0"} group-hover:text-gray-600 transition-all`}
         href={link.link}
       >
         {link.name}

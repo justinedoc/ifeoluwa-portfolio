@@ -18,10 +18,11 @@ function Works() {
   const [products, setProducts] = useState(dataForProducts);
 
   useEffect(() => {
+    const sortedProducts = dataForProducts.sort((a, b) => b?.year - a?.year);
     const filteredProducts =
       activeNav === "All"
-        ? dataForProducts
-        : dataForProducts.filter((product) =>
+        ? sortedProducts
+        : sortedProducts.filter((product) =>
             product?.type
               .toLocaleLowerCase()
               .includes(activeNav.toLocaleLowerCase())
@@ -155,7 +156,7 @@ function Image({ productImg, project, isEven }) {
         <img
           className="w-full object-cover"
           src={productImg}
-          alt=""
+          alt={project.name}
           loading="lazy"
         />
       </div>
