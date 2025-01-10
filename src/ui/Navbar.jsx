@@ -7,6 +7,7 @@ import { MdWork } from "react-icons/md";
 import { IoPerson } from "react-icons/io5";
 import { IoIosPaper } from "react-icons/io";
 import { useEffect, useRef } from "react";
+import openMail from "../utils/openMail";
 
 function Navbar({ isInverted = false, activeNav, showNavbar, setShowNavbar }) {
   const { isSmallScreened } = useScreenSize();
@@ -128,9 +129,7 @@ function LargerScreenNav({ isInverted, activeNav }) {
       </ul>
 
       <button
-        onClick={() => {
-          window.open("mailto:ifeoluwa.designs@gmail.com");
-        }}
+        onClick={openMail}
         className={`${isInverted ? "bg-white text-black hover:bg-gray-200" : "text-white bg-black hover:bg-gray-950 "}  font-medium py-3 px-8 rounded-full opacity-100 hover:opacity-90 transition-all`}
       >
         Let&#39;s Talk

@@ -6,6 +6,7 @@ import TeamsCarousel from "../ui/TeamsCarousel";
 import { Suspense } from "react";
 import useScreenSize from "../hooks/useScreenSize";
 import AnimatedSkills from "../ui/animatedSkills";
+import openMail from "../utils/openMail";
 function Hero() {
   const { isSmallScreened } = useScreenSize();
   return (
@@ -65,9 +66,7 @@ function Hero() {
             <span className="__anim-top __delay-1000">Sportrex. So,</span>
           )}
           <button
-            onClick={() => {
-              window.open("mailto:ifeoluwa.designs@gmail.com");
-            }}
+            onClick={openMail}
             className="text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 peer __anim-right __delay-2000"
           >
             Let&#39;s Talk About Your Project
