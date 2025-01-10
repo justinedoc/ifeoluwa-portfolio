@@ -13,7 +13,7 @@ function Dots({ placements, setShowNav, showNav }) {
           key={i}
           className="size-11 rounded-full flex justify-center items-center fixed z-[100] transition-all shadow-md"
           style={{
-            top: " 2rem",
+            top: "1.9rem",
             right: "1.9rem",
             background: showNav ? " #fff" : "#F3FFFE",
           }}
