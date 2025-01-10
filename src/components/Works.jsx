@@ -5,6 +5,7 @@ import { dataForProducts } from "../data/dataForProducts";
 import useScreenSize from "../hooks/useScreenSize";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { MdOutlineSearchOff } from "react-icons/md";
+import Modal from "../ui/Modal";
 
 const navItems = [
   ["All", "Product Design", "Low - Codes"],
@@ -150,7 +151,7 @@ function Image({ productImg, project, isEven }) {
     <div
       className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-bottom ${Animationdelay} bg-[#131212] rounded-2xl px-5 pt-5 pb-2`}
     >
-      <div className="">
+      <div className="md:min-h-64 min-h-36">
         <img
           className="w-full object-cover"
           src={productImg}
@@ -176,10 +177,25 @@ function Image({ productImg, project, isEven }) {
             </span>
           </>
         ) : (
-          <div className="w-full flex gap-1 justify-end items-center cursor-pointer">
-            <span className="text-base font-semibold">View Image</span>
-            <IoArrowUpOutline size={24} className="rotate-45 text-white" />
-          </div>
+          <Modal>
+            <Modal.Open opens={"image-view"}>
+              <div className="w-full flex gap-1 justify-end items-center cursor-pointer group">
+                <span className="text-base font-semibold group-hover:text-gray-500 transition-all">
+                  View
+                </span>
+                <IoArrowUpOutline size={24} className="rotate-45 text-white" />
+              </div>
+            </Modal.Open>
+
+            <Modal.Window name={"image-view"}>
+              <img
+                className="w-full object-cover"
+                src={productImg}
+                alt=""
+                loading="lazy"
+              />
+            </Modal.Window>
+          </Modal>
         )}
       </div>
     </div>
