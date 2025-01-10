@@ -66,7 +66,7 @@ function Hero() {
           )}
           <button
             onClick={() => {
-              window.location.href = "mailto:ifeoluwa.designs@gmail.com";
+              window.open("mailto:ifeoluwa.designs@gmail.com");
             }}
             className="text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 peer __anim-right __delay-2000"
           >
