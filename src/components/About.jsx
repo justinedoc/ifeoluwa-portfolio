@@ -19,7 +19,7 @@ function About() {
     },
 
     {
-      desc: "A portrait picture of me",
+      desc: "A Portrait Picture Of Me",
       src: me2,
     },
 
