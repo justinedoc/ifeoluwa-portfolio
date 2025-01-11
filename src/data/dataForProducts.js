@@ -29,6 +29,21 @@ import projectImg29 from "../assets/proj-29.png";
 import projectImg30 from "../assets/proj-30.png";
 import projectImg31 from "../assets/proj-31.png";
 
+import pukkaView from "../assets/Motion design vid/pukkaview.mp4";
+import pukkaViewThumbnail from "../assets/Motion design vid/pukka-view-thumb.png";
+import myAds from "../assets/Motion design vid/My Ads.mp4";
+import myAdsThumbnail from "../assets/Motion design vid/my-ads-thumb.png";
+import flex2ride from "../assets/Motion design vid/flex2ride.mp4";
+import flex2rideThumbnail from "../assets/Motion design vid/flex-2-ride-thumb.png";
+import flex2rideV2 from "../assets/Motion design vid/flex2ride v2.mp4";
+import flex2rideV2Thumbnail from "../assets/Motion design vid/flex-2-ride-v2-thumb.png";
+import entorage from "../assets/Motion design vid/ENTORAGE AD.mp4";
+import entorageThumbnail from "../assets/Motion design vid/entorage-thumb.png";
+import sportrexAd from "../assets/Motion design vid/Sportrexad.mp4";
+import sportrexAdThumbnail from "../assets/Motion design vid/sportrex-ad-thumb.png";
+import colosseum from "../assets/Motion design vid/colosseum hackathon.mp4";
+import colosseumThumbnail from "../assets/Motion design vid/colosseum-thumb.png";
+
 export const dataForProducts = [
   {
     name: "BlowX",
@@ -283,5 +298,54 @@ export const dataForProducts = [
     img: projectImg31,
     category: "Illustration",
     type: "illustrations",
+  },
+  {
+    name: "PukkaView.",
+    category: "Entertainment.",
+    type: "motion design",
+    video: pukkaView,
+    thumbnail: pukkaViewThumbnail,
+  },
+  {
+    name: "Colosseum Hackathon.",
+    category: "Web3.",
+    type: "motion design",
+    video: colosseum,
+    thumbnail: colosseumThumbnail,
+  },
+  {
+    name: "Flex2ride Coming Soon.",
+    category: "Ride-hailing, Transportaion.",
+    type: "motion design",
+    video: flex2rideV2,
+    thumbnail: flex2rideV2Thumbnail,
+  },
+  {
+    name: "Entourage.",
+    category: "Food Ordering, E-commerce.",
+    type: "motion design",
+    video: entorage,
+    thumbnail: entorageThumbnail,
+  },
+  {
+    name: "Sportrex Gamers Wallet.",
+    category: "Web3.",
+    type: "motion design",
+    video: sportrexAd,
+    thumbnail: sportrexAdThumbnail,
+  },
+  {
+    name: "Flex2Ride waitlist ads.",
+    category: "Ride hailing.",
+    type: "motion design",
+    video: flex2ride,
+    thumbnail: flex2rideThumbnail,
+  },
+  {
+    name: "About Me.",
+    category: "Portfolio.",
+    type: "motion design",
+    video: myAds,
+    thumbnail: myAdsThumbnail,
   },
 ];

@@ -8,7 +8,7 @@ import { MdOutlineSearchOff } from "react-icons/md";
 import Modal from "../ui/Modal";
 
 const navItems = [
-  ["All", "Product Design", "Low - Codes"],
+  ["All", "Low - Codes", "Product Design"],
   ["Branding", "Illustrations", "Motion Design"],
 ];
 
@@ -131,12 +131,14 @@ function ProductCard({ product, index }) {
           <span className="font-bold text-[#C9C9C9]">{product?.category}</span>
         </p>
 
-        <a
-          href={product.link}
-          className="font-light text-sm min-w-fit text-[#2F80ED] __anim-top __delay-600"
-        >
-          View Project
-        </a>
+        {product?.link && (
+          <a
+            href={product.link}
+            className="font-light text-sm min-w-fit text-[#2F80ED] __anim-top __delay-600"
+          >
+            View Project
+          </a>
+        )}
       </div>
 
       {!isEven && (
@@ -153,16 +155,27 @@ function Image({ productImg, project, isEven }) {
       className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-top ${Animationdelay} bg-[#131212] rounded-2xl px-5 pt-5 pb-2`}
     >
       <div className="md:min-h-64 min-h-36">
-        <img
-          className="w-full object-cover"
-          src={productImg}
-          alt={project.name}
-          loading="lazy"
-        />
+        {!project?.video ? (
+          <img
+            className="w-full object-cover"
+            src={productImg}
+            alt={project.name}
+            loading="lazy"
+          />
+        ) : (
+          <video
+            src={project.video}
+            controls
+            poster={project?.thumbnail}
+            loading="lazy"
+            preload="none"
+            className="w-full object-cover"
+          />
+        )}
       </div>
 
       <div className="flex flex-wrap justify-center gap-x-5 space-y-1 items-center py-3 text-[#4F4F4F] font-medium text-sm md:text-base">
-        {!project?.expandable ? (
+        {!project?.expandable && !project?.video ? (
           <>
             <span>
               Project Year:{" "}
@@ -178,25 +191,30 @@ function Image({ productImg, project, isEven }) {
             </span>
           </>
         ) : (
-          <Modal>
-            <Modal.Open opens={"image-view"}>
-              <div className="w-full flex gap-1 justify-end items-center cursor-pointer group">
-                <span className="text-base font-semibold group-hover:text-gray-500 transition-all">
-                  View
-                </span>
-                <IoArrowUpOutline size={24} className="rotate-45 text-white" />
-              </div>
-            </Modal.Open>
+          !project.video && (
+            <Modal>
+              <Modal.Open opens={"image-view"}>
+                <div className="w-full flex gap-1 justify-end items-center cursor-pointer group">
+                  <span className="text-base font-semibold group-hover:text-gray-500 transition-all">
+                    View
+                  </span>
+                  <IoArrowUpOutline
+                    size={24}
+                    className="rotate-45 text-white"
+                  />
+                </div>
+              </Modal.Open>
 
-            <Modal.Window name={"image-view"}>
-              <img
-                className="w-full object-cover"
-                src={productImg}
-                alt=""
-                loading="lazy"
-              />
-            </Modal.Window>
-          </Modal>
+              <Modal.Window name={"image-view"}>
+                <img
+                  className="w-full object-cover"
+                  src={productImg}
+                  alt=""
+                  loading="lazy"
+                />
+              </Modal.Window>
+            </Modal>
+          )
         )}
       </div>
     </div>
