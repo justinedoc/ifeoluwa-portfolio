@@ -14,9 +14,9 @@ function Home() {
   useEffect(() => {
     const sr = ScrollReveal?.({
       origin: "top",
-      distance: "15px",
-      duration: 1000,
-      delay: 100,
+      distance: "20px",
+      duration: 1200,
+      delay: 150,
       reset: false,
     });
 

@@ -65,14 +65,17 @@ function Hero() {
           {!isSmallScreened && (
             <span className="__anim-top __delay-1000">Sportrex. So,</span>
           )}
+
           <button
             onClick={openMail}
-            className="text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 peer __anim-right __delay-2000"
+            className="peer text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2000"
           >
             Let&#39;s Talk About Your Project
           </button>
+
           <img
-            className="absolute w-10 -top-3 -right-8 md:-right-14 opacity-0 peer-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+            onClick={openMail}
+            className="absolute w-10 -top-3 -right-8 md:-right-14 opacity-0 peer-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none"
             src={pointerImg}
             alt="cursor"
             loading="lazy"
@@ -81,7 +84,7 @@ function Hero() {
       </article>
 
       {isSmallScreened && (
-        <aside className="-rotate-90 min-h-52 flex items-center -translate-x-2 -translate-y-8">
+        <aside className="-rotate-90 min-h-52 flex items-center -translate-x-2 -translate-y-8 pointer-events-none">
           <AnimatedSkills />
         </aside>
       )}

@@ -37,7 +37,7 @@ function Tools() {
 
   return (
     <section className="flex items-center gap-3">
-      <h1 className="text-[2.3rem] font-bold">Tools:</h1>
+      <h1 className="md:text-[2.3rem] text-md font-bold">Tools:</h1>
       <div className="overflow-hidden">
         <motion.div
           ref={ref}

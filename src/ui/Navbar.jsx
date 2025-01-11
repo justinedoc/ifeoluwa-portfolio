@@ -84,8 +84,9 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
 
         {/* Call-to-Action Button */}
         <button
-          className={`text-white bg-black font-medium py-3 px-8 rounded-full opacity-100 hover:bg-gray-950 hover:opacity-90 transition-all ${
-            showNavbar ? "opacity-100 delay-300" : "opacity-0"
+          onClick={openMail}
+          className={`text-white bg-black font-medium py-3 px-8 rounded-full opacity-100 hover:bg-gray-950 hover:opacity-80 duration-300 transition ease ${
+            showNavbar ? "opacity-100" : "opacity-0"
           }`}
         >
           Let&#39;s Talk
