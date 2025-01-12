@@ -17,27 +17,27 @@ function Hero() {
           <ProfileTag
             text={"Onifade Ifeoluwa"}
             rotate={"-10deg"}
-            className="__anim-top __delay-1000"
+            className="__anim-top __delay-400"
           />
           <ProfileTag
             text={"Design Ninja"}
             rotate={"18deg"}
-            className={"__anim-top __delay-1500"}
+            className={"__anim-top __delay-600"}
           />
         </div>
       </article>
 
       <article className="flex gap-2 items-center mt-6 md:mt-3 flex-wrap relative">
-        <span className="__anim-left __delay-300">A</span>
+        <span className="__anim-left __delay-800">A</span>
         <img
-          className="w-48 md:w-64 __anim-bottom __delay-350"
+          className="w-48 md:w-64 __anim-bottom __delay-1000"
           src={prodesignerImg}
           alt="product designer"
           loading="lazy"
         />
-        <span className=".__anim-top __delay-450">and</span>
+        <span className=".__anim-top __delay-1200">and</span>
         <img
-          className="w-48 md:w-64 __anim-bottom __delay-500"
+          className="w-48 md:w-64 __anim-bottom __delay-1400"
           src={webdevImg}
           alt="low-code web devloper"
           loading="lazy"
@@ -50,27 +50,23 @@ function Hero() {
 
       <article className="md:max-w-[85%] w-full">
         <span>
-          {"Currently a Product Design & Team Lead at"
-            .split(" ")
-            .map((wrd, i) => (
-              <span key={i} className={"__anim-left __delay-" + (i + 1) * 200}>
-                {wrd}{" "}
-              </span>
-            ))}{" "}
+          <span className="__anim-top __delay-1700">
+            Currently a Product Design & Team Lead at
+          </span>{" "}
           {isSmallScreened && (
-            <span className="__anim-left __delay-1000">Sportrex. So,</span>
+            <span className="__anim-left __delay-1900">Sportrex. So,</span>
           )}
         </span>
         <div className="relative w-fit">
           {!isSmallScreened && (
-            <span className="__anim-top __delay-1000">Sportrex. So,</span>
+            <span className="__anim-top __delay-1900">Sportrex. So,</span>
           )}
 
           <button
             onClick={() =>
               window.open("https://calendly.com/ifeoluwa-designs/30min")
             }
-            className="peer text-sm md:text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2000"
+            className="peer text-sm md:text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2100"
           >
             Fix a 30mins Meeting with me now
           </button>

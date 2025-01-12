@@ -179,7 +179,7 @@ function About() {
         ref={buttonRef}
         className="contra-hire-me-button flex justify-center my-2"
         data-analyticsuserid="9b35c6ab-e428-41fb-81ba-2b3ef9d8dc2e"
-        data-theme="light"
+        data-theme="dark"
         data-username="onifade_ifeoluwa_6hxycshs"
       ></div>
     </section>
