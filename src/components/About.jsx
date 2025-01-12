@@ -127,16 +127,16 @@ function About() {
       </aside>
 
       <main className="flex flex-col md:flex-row md:gap-36 md:justify-end">
-        <p className="md:text-lg text-2xl font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10 __fade-in">
+        <p className="text-2xl font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10 __fade-in">
           I’m a <span className="text-[#4F4F4F]">product designer</span> with{" "}
-          <span className="text-[#4F4F4F]">4+ years of experience</span>,
+          <span className="text-[#4F4F4F]">4+ years of experience,</span>{" "}
           focusing on{" "}
           <span className="text-[#4F4F4F]">Web3, mobile, and web apps,</span>{" "}
           especially interested in{" "}
           <span className="text-[#4F4F4F]">
-            building for Telegram mini apps
+            building for Telegram mini apps.{" "}
           </span>
-          . I work at an affordable rate, open to equity-based projects, and if
+          I work at an affordable rate, open to equity-based projects, and if
           you’ve got an exciting project, feel free to slide into my DMs for a
           free consultation.{" "}
           <span className="text-[#C9C9C9]">

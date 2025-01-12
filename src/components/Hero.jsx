@@ -67,10 +67,12 @@ function Hero() {
           )}
 
           <button
-            onClick={openMail}
-            className="peer text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2000"
+            onClick={() =>
+              window.open("https://calendly.com/ifeoluwa-designs/30min")
+            }
+            className="peer text-sm md:text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2000"
           >
-            Let&#39;s Talk About Your Project
+            Fix a 30mins Meeting with me now
           </button>
 
           <img

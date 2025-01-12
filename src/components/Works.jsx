@@ -6,25 +6,57 @@ import useScreenSize from "../hooks/useScreenSize";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { MdOutlineSearchOff } from "react-icons/md";
 import Modal from "../ui/Modal";
+import { IoIosArrowDown } from "react-icons/io";
 
 const navItems = [
-  ["Product Design", "Low - Codes"],
-  ["Branding", "Illustrations", "Motion Design"],
+  ["Product Design", "Low - Codes", "Branding"],
+  ["Illustrations", "Motion Design"],
 ];
 
 function Works() {
   const [activeNav, setActiveNav] = useState(navItems[0][0]);
   const { isSmallScreened } = useScreenSize();
-  const [products, setProducts] = useState(dataForProducts);
+  const [products, setProducts] = useState([]);
+  const [moreProducts, setMoreProducts] = useState([]);
 
   useEffect(() => {
     const sortedProducts = dataForProducts.sort((a, b) => b?.year - a?.year);
+
     const filteredProducts = sortedProducts.filter((product) =>
       product?.type.toLocaleLowerCase().includes(activeNav.toLocaleLowerCase())
     );
 
-    setProducts((prod) => [...new Set([...filteredProducts, ...prod])]);
+    const [
+      firstProduct,
+      secondProduct,
+      thirdProduct,
+      fourthProduct,
+      ...restProduct
+    ] = filteredProducts;
+
+    setMoreProducts(restProduct);
+    if (filteredProducts.length >= 4) {
+      setProducts([firstProduct, secondProduct, thirdProduct, fourthProduct]);
+    } else {
+      setProducts(filteredProducts);
+    }
   }, [activeNav]);
+
+  function handleShowMoreProd() {
+    if (moreProducts.length > 0) {
+      setProducts((prod) => [...prod, ...moreProducts]);
+      setMoreProducts([]);
+      return;
+    }
+
+    setProducts((prod) => {
+      let products = [];
+      for (let i = 0; i < 4; i++) {
+        products.push(prod[i]);
+      }
+      return products;
+    });
+  }
 
   return (
     <section className="md:px-10 __section-inner w-full">
@@ -63,7 +95,7 @@ function Works() {
             navItems.map((nav) => (
               <ul
                 key={nav}
-                className="flex justify-between items-center bg-[#C5DEFE] rounded-lg px-2 py-1 my-3"
+                className="grid grid-cols-3 gap-1 bg-[#C5DEFE] rounded-lg px-2 py-1 my-3"
               >
                 {nav.map((sec) => (
                   <li
@@ -96,6 +128,16 @@ function Works() {
           ))
         )}
       </section>
+      {products.length >= 4 && (
+        <div className="w-full flex items-end justify-center h-40 absolute bottom-0 left-0 bg-gradient-to-t from-white/70 via-white/30 to-transparent md:p-10 p-5">
+          <button
+            onClick={handleShowMoreProd}
+            className={`bg-white text-white font-semibold px-6 py-3 shadow-md rounded-full p-6 ${!moreProducts.length ? "rotate-180" : ""}`}
+          >
+            <IoIosArrowDown size={24} className="text-black" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
@@ -122,7 +164,7 @@ function ProductCard({ product, index }) {
 
       <div className="flex items-center justify-between">
         <p className="__anim-top __delay-500">
-          {product.name}{" "}
+          {product?.name}{" "}
           <span className="font-bold text-[#C9C9C9]">{product?.category}</span>
         </p>
 
@@ -147,19 +189,19 @@ function Image({ productImg, project, isEven }) {
   const Animationdelay = !isEven ? " __delay-450" : " __delay-600";
   return (
     <div
-      className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-top ${Animationdelay} bg-[#131212] rounded-2xl px-5 pt-5 pb-2`}
+      className={`w-full min-h-[15rem] md:min-h-[20rem] my-3 __anim-top ${Animationdelay} bg-[#131212] rounded-2xl px-5 pt-5 pb-2 flex flex-col justify-center cursor-pointer transition duration-500 hover:scale-[1.02] shadow-sm hover:shadow-md`}
     >
       <div className="md:min-h-64 min-h-36">
         {!project?.video ? (
           <img
             className="w-full object-cover"
             src={productImg}
-            alt={project.name}
+            alt={project?.name}
             loading="lazy"
           />
         ) : (
           <video
-            src={project.video}
+            src={project?.video}
             controls
             poster={project?.thumbnail}
             loading="lazy"
@@ -169,24 +211,30 @@ function Image({ productImg, project, isEven }) {
         )}
       </div>
 
-      <div className="flex flex-wrap justify-center gap-x-5 space-y-1 items-center py-3 text-[#4F4F4F] font-medium text-sm md:text-base">
-        {!project?.expandable && !project?.video ? (
-          <>
-            <span>
-              Project Year:{" "}
-              <span className="text-white font-semibold">{project?.year}</span>{" "}
-            </span>
-            <span>
-              Technology:{" "}
-              <span className="text-white font-semibold">{project?.tech}</span>{" "}
-            </span>
-            <span>
-              Role:{" "}
-              <span className="text-white font-semibold">{project?.role}</span>{" "}
-            </span>
-          </>
-        ) : (
-          !project.video && (
+      {!project?.video && (
+        <div className="flex flex-wrap justify-center gap-x-5 space-y-1 items-center py-3 text-[#4F4F4F] font-medium text-sm md:text-base">
+          {!project?.expandable ? (
+            <>
+              <span>
+                Project Year:{" "}
+                <span className="text-white font-semibold">
+                  {project?.year}
+                </span>{" "}
+              </span>
+              <span>
+                Technology:{" "}
+                <span className="text-white font-semibold">
+                  {project?.tech}
+                </span>{" "}
+              </span>
+              <span>
+                Role:{" "}
+                <span className="text-white font-semibold">
+                  {project?.role}
+                </span>{" "}
+              </span>
+            </>
+          ) : (
             <Modal>
               <Modal.Open opens={"image-view"}>
                 <div className="w-full flex gap-1 justify-end items-center cursor-pointer group">
@@ -209,9 +257,9 @@ function Image({ productImg, project, isEven }) {
                 />
               </Modal.Window>
             </Modal>
-          )
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
