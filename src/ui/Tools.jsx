@@ -44,7 +44,7 @@ function Tools() {
           className="flex items-center justify-center gap-4"
           // style={{ x: xTranslation }}
         >
-          {[...IMAGES, ...IMAGES].map(({ src, alt }, index) => (
+          {IMAGES.map(({ src, alt }, index) => (
             <img
               key={index}
               src={src}
