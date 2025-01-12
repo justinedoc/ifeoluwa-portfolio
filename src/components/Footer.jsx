@@ -19,6 +19,14 @@ function Footer() {
       name: "BEHANCE",
       link: "https://www.behance.net/ifeloveth1",
     },
+    {
+      name: "TIKTOK",
+      link: "https://www.tiktok.com/@ifeloveth1",
+    },
+    {
+      name: "YOUTUBE",
+      link: "https://www.youtube.com/channel/UCyTaMvyidXNu73y8bO0p_pg",
+    },
   ];
   return (
     <footer className="__section-inner z-10 overflow-hidden bg-[#131212] min-h-[14rem] border px-3 md:px-10 md:py-5 pt-10 pb-24 rounded-xl">

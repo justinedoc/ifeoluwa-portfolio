@@ -152,7 +152,7 @@ function About() {
             onClick={() => {
               window.location.href = "https://mainstack.me/designninja";
             }}
-            className="md:w-44 w-72 __anim-right __delay-900"
+            className="md:w-44 w-72 __anim-right __delay-900 cursor-pointer"
             src={proofOfWorkImg}
             alt="proof of work"
             loading="lazy"
@@ -202,7 +202,7 @@ function AreaOfFocus() {
   ];
   return (
     <section className="flex gap-5 w-full my-7 flex-col">
-      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left delay-300">
+      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left __delay-300">
         My Area Of Focus
       </h1>
 
@@ -247,7 +247,7 @@ function AreaOfFocus() {
 function Experience() {
   return (
     <section className="md:my-7 my-10">
-      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left __delay-300">
+      <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-right __delay-500">
         My Past and Current Work Experience...
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-0 md:justify-items-center mt-7">
