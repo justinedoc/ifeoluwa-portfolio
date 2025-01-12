@@ -32,7 +32,7 @@ function Home() {
         {/* Home */}
         <section
           id="home"
-          className="bg-[#F3FFFE] __section flex-col md:p-6 p-3"
+          className="bg-[#F3FFFE] __section flex-col lg:items-center md:p-6 p-3"
         >
           <HomeFront />
         </section>
