@@ -39,7 +39,7 @@ function Window({ children, name }) {
 
   useEffect(() => {
     function handleCloseModal(e) {
-      if (!modalRefContainer?.current.contains(e.target)) {
+      if (!modalRefContainer?.current?.contains(e.target)) {
         close();
       }
     }

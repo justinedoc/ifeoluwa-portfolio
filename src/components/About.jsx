@@ -8,9 +8,58 @@ import useScreenSize from "../hooks/useScreenSize";
 import me1 from "../assets/me-1.png";
 import me2 from "../assets/me-2.png";
 import me3 from "../assets/me-3.png";
+import { useEffect, useRef } from "react";
 
 function About() {
   const { isSmallScreened } = useScreenSize();
+  const buttonRef = useRef();
+
+  useEffect(() => {
+    if (buttonRef.current) {
+      contactMeBtn();
+    }
+  }, []);
+
+  async function contactMeBtn() {
+    let buttons = buttonRef.current;
+    let theme = buttons.getAttribute("data-theme") || "light";
+    let username = buttons.getAttribute("data-username");
+    let analyticsUserId = buttons.getAttribute("data-analyticsuserid");
+
+    if (!username) return;
+
+    buttons.innerHTML = "";
+
+    let image = document.createElement("img");
+    image.alt = "Hire Me on Contra";
+    image.src =
+      "https://contra.com/static/embed/media/hiremeoncontra-" + theme + ".png";
+    image.srcset =
+      "https://contra.com/static/embed/media/hiremeoncontra-" +
+      theme +
+      ".png 1x, https://contra.com/static/embed/media/hiremeoncontra-" +
+      theme +
+      "@2x.png 2x";
+    image.style = "border-width:0;";
+
+    let anchor = document.createElement("a");
+    anchor.rel = "nofollow";
+    anchor.target = "_blank";
+
+    let utmSuffix = [
+      "?utm_campaign=HireMeOnContra",
+      analyticsUserId ? "utm_medium=" + analyticsUserId : null,
+    ]
+      .filter(Boolean)
+      .join("&");
+
+    anchor.href = "https://contra.com/" + username + utmSuffix;
+    anchor.title = "Contra.com";
+
+    anchor.append(image);
+
+    buttons.append(anchor);
+  }
 
   const me = [
     {
@@ -125,6 +174,14 @@ function About() {
           ifeoluwa.designs@gmail.com
         </a>
       </aside>
+
+      <div
+        ref={buttonRef}
+        className="contra-hire-me-button flex justify-center my-2"
+        data-analyticsuserid="9b35c6ab-e428-41fb-81ba-2b3ef9d8dc2e"
+        data-theme="light"
+        data-username="onifade_ifeoluwa_6hxycshs"
+      ></div>
     </section>
   );
 }

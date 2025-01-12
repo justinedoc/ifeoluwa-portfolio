@@ -8,7 +8,7 @@ import { MdOutlineSearchOff } from "react-icons/md";
 import Modal from "../ui/Modal";
 
 const navItems = [
-  ["All", "Low - Codes", "Product Design"],
+  ["Product Design", "Low - Codes"],
   ["Branding", "Illustrations", "Motion Design"],
 ];
 
@@ -19,14 +19,9 @@ function Works() {
 
   useEffect(() => {
     const sortedProducts = dataForProducts.sort((a, b) => b?.year - a?.year);
-    const filteredProducts =
-      activeNav === "All"
-        ? sortedProducts
-        : sortedProducts.filter((product) =>
-            product?.type
-              .toLocaleLowerCase()
-              .includes(activeNav.toLocaleLowerCase())
-          );
+    const filteredProducts = sortedProducts.filter((product) =>
+      product?.type.toLocaleLowerCase().includes(activeNav.toLocaleLowerCase())
+    );
 
     setProducts((prod) => [...new Set([...filteredProducts, ...prod])]);
   }, [activeNav]);
@@ -169,7 +164,7 @@ function Image({ productImg, project, isEven }) {
             poster={project?.thumbnail}
             loading="lazy"
             preload="none"
-            className="w-full object-cover"
+            className="w-full object-cover h-full"
           />
         )}
       </div>
