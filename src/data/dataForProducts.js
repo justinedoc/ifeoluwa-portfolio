@@ -28,6 +28,7 @@ import projectImg28 from "../assets/proj-28.png";
 import projectImg29 from "../assets/proj-29.png";
 import projectImg30 from "../assets/proj-30.png";
 import projectImg31 from "../assets/proj-31.png";
+import projectImg32 from "../assets/proj-32.png";
 
 import pukkaView from "../assets/Motion design vid/pukkaview.mp4";
 import pukkaViewThumbnail from "../assets/Motion design vid/pukka-view-thumb.png";
@@ -227,6 +228,12 @@ export const dataForProducts = [
     year: "2023",
   },
 
+  {
+    category: "Branding",
+    expandable: true,
+    img: projectImg32,
+    type: "branding",
+  },
   {
     category: "Branding",
     expandable: true,

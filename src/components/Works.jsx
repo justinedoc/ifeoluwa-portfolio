@@ -10,7 +10,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const navItems = [
   ["Product Design", "Low - Codes", "Branding"],
-  ["Illustrations", "Motion Design"],
+  ["Illustrations", "Motion Design", "A.I Graphics"],
 ];
 
 function Works() {
@@ -144,7 +144,7 @@ function Works() {
 
 function NotFound() {
   return (
-    <div className="flex items-center justify-center flex-col text-center text-black text-xl col-span-2 mt-3">
+    <div className="flex items-center justify-center flex-col text-center text-black text-xl col-span-2 mt-3 min-h-[80vh]">
       <MdOutlineSearchOff size={96} />
       <span className="font-medium">
         No Projects found for this filter. Please check back later.
