@@ -45,6 +45,24 @@ import sportrexAdThumbnail from "../assets/Motion design vid/sportrex-ad-thumb.p
 import colosseum from "../assets/Motion design vid/colosseum hackathon.mp4";
 import colosseumThumbnail from "../assets/Motion design vid/colosseum-thumb.png";
 
+import Ai1 from "../assets/AI imagees/a bull.jpeg";
+import Ai2 from "../assets/AI imagees/accient-ciity.jpeg";
+import Ai3 from "../assets/AI imagees/bullgreen.jpeg";
+import Ai4 from "../assets/AI imagees/catspace.jpeg";
+import Ai5 from "../assets/AI imagees/CHRISTMAS.png";
+import Ai7 from "../assets/AI imagees/freepik__candid-image-photography-natural-textures-highly-r__64521.jpeg";
+import Ai8 from "../assets/AI imagees/freepik__candid-image-photography-natural-textures-highly-r__68750.jpeg";
+import Ai9 from "../assets/AI imagees/Gemini_Generated_Image_9tmbr39tmbr39tmb_animation.gif";
+import Ai10 from "../assets/AI imagees/Gemini_Generated_Image_iberk2iberk2iber.jpeg";
+import Ai11 from "../assets/AI imagees/Group 80.png";
+import Ai12 from "../assets/AI imagees/illustrt.jpeg";
+import Ai13 from "../assets/AI imagees/landed.jpeg";
+import Ai14 from "../assets/AI imagees/mansq.jpeg";
+import Ai15 from "../assets/AI imagees/sol.jpeg";
+import Ai16 from "../assets/AI imagees/spac34.jpeg";
+import Ai17 from "../assets/AI imagees/space.jpeg";
+import Ai18 from "../assets/AI imagees/trump 3.jpeg";
+
 export const dataForProducts = [
   {
     name: "BlowX",
@@ -305,6 +323,108 @@ export const dataForProducts = [
     img: projectImg31,
     category: "Illustration",
     type: "illustrations",
+  },
+  {
+    expandable: true,
+    img: Ai1,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai2,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai3,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai4,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai5,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai7,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai8,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai9,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai10,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai11,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai12,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai13,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai14,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai15,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai16,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai17,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
+  },
+  {
+    expandable: true,
+    img: Ai18,
+    category: "A.I Graphics",
+    type: "A.I Graphics",
   },
   {
     name: "PukkaView.",

@@ -1,11 +1,11 @@
 import ProfileTag from "../ui/ProfileTag";
 import prodesignerImg from "../assets/prod-designer-tag.png";
 import webdevImg from "../assets/web-devImg.png";
-import pointerImg from "../assets/pointer-img.png";
 import TeamsCarousel from "../ui/TeamsCarousel";
 import { Suspense } from "react";
 import useScreenSize from "../hooks/useScreenSize";
 import AnimatedSkills from "../ui/animatedSkills";
+import pointerImg from "../assets/pointer-img.png";
 import openMail from "../utils/openMail";
 function Hero() {
   const { isSmallScreened } = useScreenSize();

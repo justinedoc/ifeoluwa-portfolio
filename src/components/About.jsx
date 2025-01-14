@@ -9,6 +9,8 @@ import me1 from "../assets/me-1.png";
 import me2 from "../assets/me-2.png";
 import me3 from "../assets/me-3.png";
 import { useEffect, useRef } from "react";
+import pointerImg from "../assets/pointer-img.png";
+import openMail from "../utils/openMail";
 
 function About() {
   const { isSmallScreened } = useScreenSize();
@@ -127,22 +129,51 @@ function About() {
       </aside>
 
       <main className="flex flex-col md:flex-row md:gap-36 md:justify-end">
-        <p className="text-2xl font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10 __fade-in">
-          I’m a <span className="text-[#4F4F4F]">product designer</span> with{" "}
-          <span className="text-[#4F4F4F]">4+ years of experience,</span>{" "}
-          focusing on{" "}
-          <span className="text-[#4F4F4F]">Web3, mobile, and web apps,</span>{" "}
-          especially interested in{" "}
-          <span className="text-[#4F4F4F]">
-            building for Telegram mini apps.{" "}
-          </span>
-          I work at an affordable rate, open to equity-based projects, and if
-          you’ve got an exciting project, feel free to slide into my DMs for a
-          free consultation.{" "}
-          <span className="text-[#C9C9C9]">
-            Looking forward to learning and collaborating!
-          </span>
-        </p>
+        <article className="flex flex-col items-end">
+          <p className="text-[1.4rem] font-medium text-white md:max-w-[45rem] text-pretty md:leading-9 leading-10 __fade-in">
+            I’m a <span className="text-[#4F4F4F]">product designer</span> with{" "}
+            <span className="text-[#4F4F4F]">4+ years of experience,</span>{" "}
+            focusing on{" "}
+            <span className="text-[#4F4F4F]">Web3, mobile, and web apps,</span>{" "}
+            I have special interest in building for{" "}
+            <span className="text-[#4F4F4F]">
+              Telegram mini apps, Web3, Fin-tech and challenging tasks
+            </span>
+            . Designing design strategies, services, and products for people✍️
+            with close to a decade years in the tech space. I approach{" "}
+            <span className="text-[#4F4F4F]">problem-solving</span>{" "}
+            strategically 😍, and I love helping companies pivot from{" "}
+            <span className="text-[#4F4F4F]"> level 0 to 1 </span> and then
+            strategise on{" "}
+            <span className="text-[#4F4F4F]">what&#39;s next</span>.
+            <span className="font-extralight text-white/80">
+              {" "}
+              I also talk a bit when I am well-fed, 🍔🌭🥗. I talk on topics
+              that revolve around going into tech as a beginner and design in
+              general.
+            </span>{" "}
+            Feel free to reach out.
+          </p>
+
+          <div className="relative w-fit">
+            <button
+              onClick={() =>
+                window.open("https://calendly.com/ifeoluwa-designs/30min")
+              }
+              className="peer text-[0.9rem] md:text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:-translate-x-5 __anim-right __delay-2100"
+            >
+              Fix a 30mins Meeting with me now
+            </button>
+
+            <img
+              onClick={openMail}
+              className="absolute w-10 -top-5 -right-6 md:-right-4 opacity-0 peer-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none"
+              src={pointerImg}
+              alt="cursor"
+              loading="lazy"
+            />
+          </div>
+        </article>
 
         <aside className="mt-10 md:mt-0 flex flex-col items-end">
           <p className="md:text-sm text-2xl font-medium text-[#C9C9C9] mb-7 md:mb-3 __anim-right __delay-700">
