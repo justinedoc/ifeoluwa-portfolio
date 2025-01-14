@@ -6,6 +6,9 @@ export default {
       backgroundImage: {
         "purple-gradient": "linear-gradient(270deg, #E047FF 0%, #7856FE 100%)",
       },
+      screens: {
+        md: "890px",
+      },
     },
   },
   plugins: [],

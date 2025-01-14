@@ -29,7 +29,7 @@ function Footer() {
     },
   ];
   return (
-    <footer className="__section-inner z-10 overflow-hidden bg-[#131212] min-h-[14rem] border px-3 md:px-10 md:py-5 pt-10 pb-24 rounded-xl">
+    <footer className="relative w-full z-10 overflow-hidden bg-[#131212] min-h-[14rem] border px-3 md:px-10 md:py-5 pt-10 pb-24 rounded-xl">
       <div className="absolute w-full z-10 bottom-0 left-0 flex justify-center items-center">
         <h1 className="md:text-[12rem] text-[3.3rem] tracking-wide text-[#FFFFFF1A] font-bold">
           {" "}

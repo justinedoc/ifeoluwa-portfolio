@@ -10,7 +10,7 @@ import openMail from "../utils/openMail";
 function Hero() {
   const { isSmallScreened } = useScreenSize();
   return (
-    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] mb-6 mt-16 md:px-8 min-h-80 relative">
+    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] 2xl:text-[3rem] mb-6 mt-16 md:px-8 pt-5 pb-3 xl:min-h-[60vh] 2xl:min-h-[70vh] relative flex flex-col 2xl:gap-5 justify-center">
       <article className="flex flex-col md:flex-row md:items-center gap-2">
         <span className="text-nowrap __anim-left __delay-200">I am</span>
         <div className="w-fit flex flex-wrap gap-2 justify-between -translate-x-2 md:-translate-x-0">
@@ -66,7 +66,7 @@ function Hero() {
             onClick={() =>
               window.open("https://calendly.com/ifeoluwa-designs/30min")
             }
-            className="peer text-sm md:text-lg mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2100"
+            className="peer text-sm md:text-lg 2xl:text-xl mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2100"
           >
             Fix a 30mins Meeting with me now
           </button>
@@ -87,7 +87,7 @@ function Hero() {
         </aside>
       )}
 
-      <article className="flex md:flex-row flex-col justify-center md:items-center my-12 md:my-7 overflow-hidden gap-4">
+      <article className="flex md:flex-row flex-col justify-center md:items-center my-12 md:my-7 overflow-hidden gap-4 mt-auto">
         <p className="md:text-lg font-medium z-10 w-fit min-w-[15rem] __anim-top __delay-2000">
           Worked with teams from:{" "}
         </p>

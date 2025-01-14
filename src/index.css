@@ -14,5 +14,5 @@
 /* snap-start */
 
 .__section-inner {
-  @apply relative max-w-[78rem] 2xl:max-w-[90rem];
+  @apply relative max-w-[100%];
 }

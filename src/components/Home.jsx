@@ -44,7 +44,7 @@ function Home() {
           <About />
         </section>
 
-        <section className="bg-[#F3FFFE] md:p-10 p-3 w-full flex flex-col lg:items-center">
+        <section className="bg-[#F3FFFE] md:p-5 p-3 w-full flex flex-col lg:items-center">
           <Footer />
           <p className="text-lg font-semibold text-center mt-3 text-[#6F6F70]">
             {" "}
