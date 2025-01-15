@@ -10,7 +10,7 @@ import openMail from "../utils/openMail";
 function Hero() {
   const { isSmallScreened } = useScreenSize();
   return (
-    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] 2xl:text-[3rem] mb-6 mt-16 md:px-8 pt-5 pb-3 xl:min-h-[60vh] 2xl:min-h-[70vh] 2xl:mt-32 2xl:py-20 2xl:px-20 relative flex flex-col 2xl:gap-4 justify-center">
+    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] 2xl:text-[3rem] mb-6 mt-16 md:px-8 md:pt-5 md:pb-3 xl:min-h-[60vh] 2xl:min-h-[70vh] 2xl:mt-32 2xl:py-20 2xl:px-20 relative flex flex-col 2xl:gap-4 justify-center">
       <article className="flex flex-col md:flex-row md:items-center gap-2">
         <span className="text-nowrap __anim-left __delay-200">I am</span>
         <div className="w-fit flex flex-wrap gap-2 justify-between -translate-x-2 md:-translate-x-0">
@@ -82,12 +82,12 @@ function Hero() {
       </article>
 
       {isSmallScreened && (
-        <aside className="-rotate-90 min-h-52 flex items-center -translate-x-2 -translate-y-8 pointer-events-none">
+        <aside className="-rotate-90 min-h-64 flex items-center -translate-x-2 -translate-y-14 pointer-events-none">
           <AnimatedSkills />
         </aside>
       )}
 
-      <article className="flex md:flex-row flex-col justify-center md:items-center overflow-hidden gap-4 mt-auto">
+      <article className="flex md:flex-row flex-col justify-center md:items-center overflow-hidden gap-4 mt-auto min-h-44 xl:min-h-0">
         <p className="md:text-lg font-medium z-10 w-fit min-w-[15rem] __anim-top __delay-2000">
           Worked with teams from:{" "}
         </p>

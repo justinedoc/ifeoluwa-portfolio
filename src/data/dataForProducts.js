@@ -29,6 +29,8 @@ import projectImg29 from "../assets/proj-29.png";
 import projectImg30 from "../assets/proj-30.png";
 import projectImg31 from "../assets/proj-31.png";
 import projectImg32 from "../assets/proj-32.png";
+import projectImg33 from "../assets/proj-33.png";
+import projectImg34 from "../assets/proj-34.png";
 
 import pukkaView from "../assets/Motion design vid/pukkaview.mp4";
 import pukkaViewThumbnail from "../assets/Motion design vid/pukka-view-thumb.png";
@@ -44,6 +46,10 @@ import sportrexAd from "../assets/Motion design vid/Sportrexad.mp4";
 import sportrexAdThumbnail from "../assets/Motion design vid/sportrex-ad-thumb.png";
 import colosseum from "../assets/Motion design vid/colosseum hackathon.mp4";
 import colosseumThumbnail from "../assets/Motion design vid/colosseum-thumb.png";
+import yumdash from "../assets/Motion design vid/yumdash.mp4";
+import yumdashThumbnail from "../assets/Motion design vid/yumdash-thumb.png";
+import mobileAds from "../assets/Motion design vid/mobile ads.mp4";
+import mobileAdsThumbnail from "../assets/Motion design vid/mobile-ads-thumb.png";
 
 import Ai1 from "../assets/AI imagees/a bull.jpeg";
 import Ai2 from "../assets/AI imagees/accient-ciity.jpeg";
@@ -244,6 +250,27 @@ export const dataForProducts = [
     role: "Product designer.",
     tech: "Figma, Elementor",
     year: "2023",
+  },
+  {
+    name: "MODUCODE",
+    link: "https://moducode.com",
+    img: projectImg33,
+    category: "Tech Academy.",
+    type: "Low - Codes",
+    role: "Product developer.",
+    tech: "Wordpress",
+    year: "2024",
+  },
+
+  {
+    name: "Hartfrica",
+    link: "https://moducode.com",
+    img: projectImg34,
+    category: "Painting & Art.",
+    type: "Low - Codes",
+    role: "Product designer & developer.",
+    tech: "Wordpress",
+    year: "2021",
   },
 
   {
@@ -474,5 +501,19 @@ export const dataForProducts = [
     type: "motion design",
     video: myAds,
     thumbnail: myAdsThumbnail,
+  },
+  {
+    name: "Yumdash",
+    category: "Food app, E-commerce.",
+    type: "motion design",
+    video: yumdash,
+    thumbnail: yumdashThumbnail,
+  },
+  {
+    name: "Flex2Ride waitlist ads.",
+    category: "Ride hailing.",
+    type: "motion design",
+    video: mobileAds,
+    thumbnail: mobileAdsThumbnail,
   },
 ];

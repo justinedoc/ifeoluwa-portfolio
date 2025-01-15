@@ -18,6 +18,7 @@ function Works() {
   const { isSmallScreened } = useScreenSize();
   const [products, setProducts] = useState([]);
   const [moreProducts, setMoreProducts] = useState([]);
+  const [isShowingMore, setIsShowingMore] = useState(false);
 
   useEffect(() => {
     const sortedProducts = dataForProducts.sort((a, b) => b?.year - a?.year);
@@ -43,19 +44,21 @@ function Works() {
   }, [activeNav]);
 
   function handleShowMoreProd() {
-    if (moreProducts.length > 0) {
-      setProducts((prod) => [...prod, ...moreProducts]);
-      setMoreProducts([]);
-      return;
-    }
+    // if (moreProducts.length > 0) {
+    //   setProducts((prod) => [...prod, ...moreProducts]);
+    //   setMoreProducts([]);
+    //   return;
+    // }
 
-    setProducts((prod) => {
-      let products = [];
-      for (let i = 0; i < 4; i++) {
-        products.push(prod[i]);
-      }
-      return products;
-    });
+    // setProducts((prod) => {
+    //   let products = [];
+    //   for (let i = 0; i < 4; i++) {
+    //     products.push(prod[i]);
+    //   }
+    //   return products;
+    // });
+
+    setIsShowingMore((cur) => !cur);
   }
 
   return (
@@ -122,17 +125,21 @@ function Works() {
       <section className="my-5 md:my-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14">
         {products.length <= 0 ? (
           <NotFound />
-        ) : (
+        ) : !isShowingMore ? (
           products.map((product, i) => (
+            <ProductCard key={i} product={product} index={1 + i} />
+          ))
+        ) : (
+          [...products, ...moreProducts].map((product, i) => (
             <ProductCard key={i} product={product} index={1 + i} />
           ))
         )}
       </section>
       {products.length >= 4 && (
-        <div className="w-full flex items-end justify-center h-40 absolute bottom-0 left-0 bg-gradient-to-t from-white/70 via-white/30 to-transparent md:p-10 p-5">
+        <div className="w-full flex items-end justify-center h-40 absolute bottom-0 left-0 bg-gradient-to-t from-white/70 via-white/30 to-transparent md:p-10 p-5 pointer-events-none">
           <button
             onClick={handleShowMoreProd}
-            className={`bg-white text-white font-semibold px-6 py-3 shadow-md rounded-full p-6 ${!moreProducts.length ? "rotate-180" : ""}`}
+            className={`bg-white pointer-events-auto cursor-pointer text-white font-semibold px-6 py-3 shadow-md rounded-full p-6 ${isShowingMore ? "rotate-180" : ""}`}
           >
             <IoIosArrowDown size={24} className="text-black" />
           </button>
