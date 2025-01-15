@@ -10,7 +10,7 @@ import openMail from "../utils/openMail";
 function Hero() {
   const { isSmallScreened } = useScreenSize();
   return (
-    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] 2xl:text-[3rem] mb-6 mt-16 md:px-8 pt-5 pb-3 xl:min-h-[60vh] 2xl:min-h-[70vh] relative flex flex-col 2xl:gap-5 justify-center">
+    <section className="text-white font-medium text-[1.5rem] md:text-[2.3rem] 2xl:text-[3rem] mb-6 mt-16 md:px-8 pt-5 pb-3 xl:min-h-[60vh] 2xl:min-h-[70vh] 2xl:mt-32 2xl:py-20 2xl:px-20 relative flex flex-col 2xl:gap-4 justify-center">
       <article className="flex flex-col md:flex-row md:items-center gap-2">
         <span className="text-nowrap __anim-left __delay-200">I am</span>
         <div className="w-fit flex flex-wrap gap-2 justify-between -translate-x-2 md:-translate-x-0">
@@ -43,12 +43,12 @@ function Hero() {
           loading="lazy"
         />
 
-        <aside className="absolute top-40 right-36 -rotate-90">
+        <aside className="absolute top-40 right-36 2xl:right-40 -rotate-90">
           {!isSmallScreened && <AnimatedSkills />}
         </aside>
       </article>
 
-      <article className="md:max-w-[85%] w-full">
+      <article className="md:max-w-[85%] w-full flex flex-col 2xl:gap-4">
         <span>
           <span className="__anim-top __delay-1700">
             Currently a Product Design & Team Lead at
@@ -87,7 +87,7 @@ function Hero() {
         </aside>
       )}
 
-      <article className="flex md:flex-row flex-col justify-center md:items-center my-12 md:my-7 overflow-hidden gap-4 mt-auto">
+      <article className="flex md:flex-row flex-col justify-center md:items-center overflow-hidden gap-4 mt-auto">
         <p className="md:text-lg font-medium z-10 w-fit min-w-[15rem] __anim-top __delay-2000">
           Worked with teams from:{" "}
         </p>

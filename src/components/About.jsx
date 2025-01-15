@@ -155,7 +155,7 @@ function About() {
             Feel free to reach out.
           </p>
 
-          <div className="relative w-fit">
+          <div className="relative w-fit my-3">
             <button
               onClick={() =>
                 window.open("https://calendly.com/ifeoluwa-designs/30min")
@@ -191,10 +191,11 @@ function About() {
         </aside>
       </main>
 
-      <AreaOfFocus />
-      <Experience />
-
-      <aside className="flex flex-col md:flex-row gap-3 w-full md:items-center justify-center">
+      <article className="flex flex-col">
+        <AreaOfFocus />
+        <Experience />
+      </article>
+      <aside className="flex flex-col md:flex-row gap-3 w-full md:items-center justify-center my-7">
         <header className="text-2xl md:text-3xl text-[#4F4F4F] font-bold __anim-left __delay-500">
           Email me:
         </header>
@@ -232,7 +233,7 @@ function AreaOfFocus() {
     "Design Consultation",
   ];
   return (
-    <section className="flex gap-5 w-full my-7 flex-col">
+    <section className="flex gap-5 w-full my-12 flex-col">
       <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-left __delay-300">
         My Area Of Focus
       </h1>
@@ -277,7 +278,7 @@ function AreaOfFocus() {
 
 function Experience() {
   return (
-    <section className="md:my-7 my-10">
+    <section className="md:my-12 my-10">
       <h1 className="text-[#C9C9C9] text-2xl md:text-xl font-medium min-w-fit __anim-right __delay-500">
         My Past and Current Work Experience...
       </h1>
