@@ -1,7 +1,7 @@
-// import useMeasure from "react-use-measure";
-// import { motion, useMotionValue } from "motion/react";
-// import { useEffect } from "react";
-// import { animate } from "motion";
+import useMeasure from "react-use-measure";
+import { motion, useMotionValue } from "motion/react";
+import { useEffect } from "react";
+import { animate } from "motion";
 import tools1 from "../assets/Tools logo/Group.png";
 import tools2 from "../assets/Tools logo/image 10.png";
 import tools3 from "../assets/Tools logo/image 11.png";
@@ -42,33 +42,33 @@ const IMAGES = [
 ];
 
 function Tools() {
-  // let [ref, { width }] = useMeasure();
+  let [ref, { width }] = useMeasure();
 
-  // const xTranslation = useMotionValue(0);
+  const xTranslation = useMotionValue(0);
 
-  // useEffect(() => {
-  //   let controls;
-  //   let finalPosition = -width / 2 - 4;
+  useEffect(() => {
+    let controls;
+    let finalPosition = width / 2 - 4;
 
-  //   controls = animate(xTranslation, [0, finalPosition], {
-  //     ease: "linear",
-  //     duration: 90,
-  //     repeat: Infinity,
-  //     repeatDelay: 0,
-  //     repeatType: "loop",
-  //   });
+    controls = animate(xTranslation, [0, finalPosition], {
+      ease: "linear",
+      duration: 50,
+      repeat: Infinity,
+      repeatDelay: 0,
+      repeatType: "loop",
+    });
 
-  //   return () => controls.stop();
-  // }, [xTranslation, width]);
+    return () => controls.stop();
+  }, [xTranslation, width]);
 
   return (
     <section className="flex items-center gap-3 __section-inner">
       <h1 className="md:text-[2.3rem] text-[2rem] font-bold">Tools:</h1>
-      <div className="overflow-x-auto">
-        <div
-          // ref={ref}
+      <div className="overflow-x-hidden">
+        <motion.div
+          ref={ref}
           className="flex items-center justify-center gap-5"
-          // style={{ x: xTranslation }}
+          style={{ x: xTranslation }}
         >
           {[...IMAGES, ...IMAGES].map(({ src, alt }, index) => (
             <img
@@ -79,7 +79,7 @@ function Tools() {
               className="object-cover max-h-16 max-w-18 md:max-h-[3rem] my-1"
             />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
