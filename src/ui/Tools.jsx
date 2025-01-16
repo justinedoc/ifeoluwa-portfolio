@@ -9,6 +9,7 @@ import tools4 from "../assets/Tools logo/image 12.png";
 import tools5 from "../assets/Tools logo/image 13.png";
 import tools6 from "../assets/Tools logo/image 14.png";
 import tools7 from "../assets/Tools logo/image 9.png";
+import useScreenSize from "../hooks/useScreenSize";
 
 const IMAGES = [
   {
@@ -42,8 +43,8 @@ const IMAGES = [
 ];
 
 function Tools() {
+  const { isSmallScreened } = useScreenSize();
   let [ref, { width }] = useMeasure();
-
   const xTranslation = useMotionValue(0);
 
   useEffect(() => {
@@ -52,7 +53,7 @@ function Tools() {
 
     controls = animate(xTranslation, [0, finalPosition], {
       ease: "linear",
-      duration: 50,
+      duration: 80,
       repeat: Infinity,
       repeatDelay: 0,
       repeatType: "loop",
@@ -62,13 +63,13 @@ function Tools() {
   }, [xTranslation, width]);
 
   return (
-    <section className="flex items-center gap-3 __section-inner">
+    <section className="flex items-center gap-3 __section-inner my-3">
       <h1 className="md:text-[2.3rem] text-[2rem] font-bold">Tools:</h1>
-      <div className="overflow-x-hidden">
+      <div className="md:overflow-x-hidden overflow-x-auto">
         <motion.div
           ref={ref}
           className="flex items-center justify-center gap-5"
-          style={{ x: xTranslation }}
+          style={!isSmallScreened && { x: xTranslation }}
         >
           {[...IMAGES, ...IMAGES].map(({ src, alt }, index) => (
             <img
@@ -76,7 +77,7 @@ function Tools() {
               src={src}
               alt={alt}
               loading="lazy"
-              className="object-cover max-h-16 max-w-18 md:max-h-[3rem] my-1"
+              className="object-cover max-h-[2rem]"
             />
           ))}
         </motion.div>
