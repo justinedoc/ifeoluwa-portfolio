@@ -63,10 +63,10 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
     <nav
       ref={navRef}
       className={`fixed top-[1.5rem] right-[1.5rem] z-50 rounded-xl shadow-md text-lg font-medium transition-all duration-700 overflow-hidden ${
-        showNavbar ? "w-[13rem] p-6 h-[49vh]" : "size-0"
+        showNavbar ? "w-[15rem] p-6 h-[24rem]" : "size-0"
       }`}
     >
-      <div className="space-y-10 relative">
+      <div className="space-y-8 relative">
         {/* Navigation Links */}
         <ul className="flex flex-col gap-6 relative mt-2 z-10">
           {mobileNavs.map((nav) => (
