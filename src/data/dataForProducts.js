@@ -93,7 +93,7 @@ export const dataForProducts = [
   {
     name: "Yumdash",
     category: "Food app, E-commerce.",
-    link: "#",
+    link: "https://yumdash.ng",
     img: projectImg3,
     type: "Product Design",
     role: "Product designer.",
