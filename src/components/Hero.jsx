@@ -57,7 +57,7 @@ function Hero() {
             <span className="__anim-left __delay-1900">Sportrex. So,</span>
           )}
         </span>
-        <div className="relative w-fit">
+        <div className="relative flex items-center w-fit mt-2">
           {!isSmallScreened && (
             <span className="__anim-top __delay-1900">Sportrex. So,</span>
           )}
@@ -66,7 +66,7 @@ function Hero() {
             onClick={() =>
               window.open("https://calendly.com/ifeoluwa-designs/30min")
             }
-            className="peer text-sm md:text-lg 2xl:text-xl mt-4 bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5 md:translate-y-1 __anim-right __delay-2100"
+            className="peer text-sm md:text-lg 2xl:text-xl bg-white rounded-full md:py-2 px-5 py-3 md:px-7 text-black font-medium md:translate-x-5  __anim-right __delay-2100"
           >
             Fix a 30mins Meeting with me now
           </button>

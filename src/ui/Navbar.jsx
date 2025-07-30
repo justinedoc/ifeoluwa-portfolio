@@ -63,7 +63,7 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
     <nav
       ref={navRef}
       className={`fixed top-[1.5rem] right-[1.5rem] z-50 rounded-xl shadow-md text-lg font-medium transition-all duration-700 overflow-hidden ${
-        showNavbar ? "w-[13rem] p-6 h-[48vh]" : "size-0"
+        showNavbar ? "w-[13rem] p-6 h-[49vh]" : "size-0"
       }`}
     >
       <div className="space-y-10 relative">
@@ -83,14 +83,28 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
         </ul>
 
         {/* Call-to-Action Button */}
-        <button
-          onClick={openMail}
-          className={`text-white bg-black font-medium py-3 px-8 rounded-full opacity-100 hover:bg-gray-950 hover:opacity-80 duration-300 transition ease ${
-            showNavbar ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          Let&#39;s Talk
-        </button>
+
+        <div className="flex flex-col gap-2 items-center">
+          <button
+            onClick={openMail}
+            className={`text-white bg-black font-medium py-3 px-8 rounded-full opacity-100 hover:bg-gray-950 hover:opacity-80 duration-300 transition ease ${
+              showNavbar ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Let&#39;s Talk
+          </button>
+
+          <button
+            onClick={() =>
+              window.open("https://contra.com/designninja/work")
+            }
+            className={`text-black bg-white border-black font-medium px-6 rounded-full opacity-100 hover:opacity-90 transition-all border-2 py-2.5 ${
+              showNavbar ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            Case Study
+          </button>
+        </div>
 
         {/* Expanding Circle */}
         <div
@@ -108,10 +122,10 @@ function LargerScreenNav({ isInverted, activeNav }) {
   const navLinks = useNavLinks({ activeLinkName: activeNav, isInverted });
   return (
     <nav
-      className={`sticky top-[2rem] z-50 flex justify-between items-center p-1 w-[80%] md:w-[55%] mx-auto rounded-full ${invertedBg}`}
+      className={`sticky top-[2rem] z-50 flex justify-between items-center p-1 w-[80%] md:w-[65%] mx-auto rounded-full ${invertedBg}`}
     >
       <div
-        className={`w-11 h-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}
+        className={`size-11 rounded-full ${isInverted ? "bg-white" : "bg-black"} flex items-center justify-center`}
       >
         <img
           className="w-[88%]"
@@ -129,12 +143,22 @@ function LargerScreenNav({ isInverted, activeNav }) {
         {[...navLinks]}
       </ul>
 
-      <button
-        onClick={openMail}
-        className={`${isInverted ? "bg-white text-black hover:bg-gray-200" : "text-white bg-black hover:bg-gray-950 "}  font-medium py-3 px-8 rounded-full opacity-100 hover:opacity-90 transition-all`}
-      >
-        Let&#39;s Talk
-      </button>
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() =>
+            window.open("https://calendly.com/ifeoluwa-designs/30min")
+          }
+          className={`${isInverted ? "bg-black text-white border-white" : "text-black bg-white border-black"} font-medium px-7 rounded-full opacity-100 hover:opacity-90 transition-all border-2 py-2.5`}
+        >
+          Case Study
+        </button>
+        <button
+          onClick={openMail}
+          className={`${isInverted ? "bg-white text-black hover:bg-gray-200" : "text-white bg-black hover:bg-gray-950 "}  font-medium py-3 px-7 rounded-full opacity-100 hover:opacity-90 transition-all`}
+        >
+          Let&#39;s Talk
+        </button>
+      </div>
     </nav>
   );
 }
