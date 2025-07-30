@@ -95,9 +95,7 @@ function MobileScreenNav({ showNavbar, setShowNavbar }) {
           </button>
 
           <button
-            onClick={() =>
-              window.open("https://contra.com/designninja/work")
-            }
+            onClick={() => window.open("https://contra.com/designninja/work")}
             className={`text-black bg-white border-black font-medium px-6 rounded-full opacity-100 hover:opacity-90 transition-all border-2 py-2.5 ${
               showNavbar ? "opacity-100" : "opacity-0"
             }`}
@@ -145,9 +143,7 @@ function LargerScreenNav({ isInverted, activeNav }) {
 
       <div className="flex items-center gap-2">
         <button
-          onClick={() =>
-            window.open("https://calendly.com/ifeoluwa-designs/30min")
-          }
+          onClick={() => window.open("https://contra.com/designninja/work")}
           className={`${isInverted ? "bg-black text-white border-white" : "text-black bg-white border-black"} font-medium px-7 rounded-full opacity-100 hover:opacity-90 transition-all border-2 py-2.5`}
         >
           Case Study
